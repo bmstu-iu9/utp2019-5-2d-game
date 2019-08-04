@@ -13,7 +13,8 @@ app.use(bodyParser.json());
 app.use('/levels', levelRouter);
 
 app.listen(3012, function() {
-    mongoose.connect("mongodb://localhost:27017/levelapp");
-    console.log("API started")
+    mongoose.connect("mongodb://95.165.163.204:27017/")
+    .then(() => console.log("API started"))
+    .catch((err) => console.log(err));  
 })
 
