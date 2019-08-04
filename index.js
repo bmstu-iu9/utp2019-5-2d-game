@@ -1,5 +1,7 @@
 var express = require("express");
-var mongoose = require("mongoose")
+var mongoose = require("mongoose");
+
+var logger = require("./logger");
 
 var app = express();
 
@@ -14,7 +16,7 @@ app.use('/levels', levelRouter);
 
 app.listen(3012, function() {
     mongoose.connect("mongodb://95.165.163.204:27017/")
-    .then(() => console.log("API started"))
-    .catch((err) => console.log(err));  
+    .then(() => logger.log("API started"))
+    .catch((err) => logger.log(err));  
 })
 
