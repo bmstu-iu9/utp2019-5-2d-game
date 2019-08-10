@@ -1,0 +1,105 @@
+* {
+	outline: none;
+}
+
+html{
+	height: 100%;
+	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
+}
+
+/* -------------------------------------------------------------- */
+h1{
+	margin: 0.5%;
+	font-size: 60%;
+	color: #EBEBEB;
+	float:left;
+}
+
+/* #gameTitle{ */
+
+	/* height: 2%; */
+	/* width: 5%; */
+	/* position: fixed; */
+	/* padding: 0.1%; */
+	/* float: left; */
+/* } */
+
+/* -------------------------------------------------------------- С ЭТИМ ПОТОМ РАЗОБРАТЬСЯ */
+
+#LB{
+	/* margin-right: 5em; */
+	margin-top: 2%;
+	left: 50%;
+	width: 30%;
+}
+
+/* -------------------------------------------------------------- */
+
+#base{
+	width: 20%;
+	margin-top: 5%;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+#Name, #Password, #Password1, #Login, #Check_in{
+	height: 3em;
+	width: 18em;
+	margin: 0.5em;
+	margin-top: 0.25em;
+	border-radius: 1em;
+	text-align: center;
+	font-weight: bold;
+	color: #2A2A2A;
+}
+
+#Login, #Password, #Name, #Password1{
+	background: #444444;
+}
+
+#Check_in{
+	background: #696969;
+}
+
+/* -------------------------------------------------------------- */
+
+#gif, #gif1{
+	margin-top: 2%;
+	padding: 0.1em;
+	/* width:450px; */
+	width:35%;
+	height:340px;
+	background: url(visual/lab.png) no-repeat;
+	margin-bottom: 3%;
+}
+
+#gif{
+	float: left;
+	margin-left: 3%;
+}
+#gif1{
+	float:right;
+	margin-right: 3%;
+}
+
+/* -------------------------------------------------------------- */
+
+
+#footer{
+	
+	position: fixed;
+    left: 0;
+	bottom: 0; 
+	margin-bottom: 0.5%;
+	font-size: 80%;
+	margin-left: 1%;
+	/* margin:1em; */
+	/* font-size: 0.8em; */
+}
+
+/* -------------------------------------------------------------- */
+
+/* div { */
+	/* border: 3px outset #2A2A2A; */
+/* } */
