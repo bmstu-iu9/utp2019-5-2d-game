@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 
 
-app.use('/view', express.static('view'));
+app.use(express.static('view'));
 
 app.use('/:name', function(req, res) {
     let name = req.params.name;
