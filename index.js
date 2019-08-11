@@ -1,3 +1,5 @@
+"use strict";
+
 var express = require("express");
 var mongoose = require("mongoose");
 
@@ -15,7 +17,7 @@ app.use(bodyParser.json());
 app.use('/levels', levelRouter);
 
 app.listen(3012, function() {
-    mongoose.connect("mongodb://95.165.163.204:27017/")
+    mongoose.connect("mongodb://95.165.163.204:27017/", { useNewUrlParser: true })
     .then(() => logger.log("API started"))
     .catch((err) => logger.log(err));  
 })
