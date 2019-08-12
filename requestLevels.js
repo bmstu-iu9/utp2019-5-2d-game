@@ -9,12 +9,12 @@ module.exports.createLelelElement = function(level) {
 	nameOfMap.appendChild(document.createTextNode(level.nameOfMap));
 	userName.appendChild(document.createTextNode(level.userName));
 	dataAndTime.appendChild(document.createTextNode(level.dataAndTime));
-	description.appendChild(document.createTextNode(description));
+	description.appendChild(document.createTextNode(level.description));
 	image.setAttribute('src', level.image);
 
 	newMap.appendChild(nameOfMap);
 	newMap.appendChild(userName);
-	newMap.appendChild(nameOfMap);
+	newMap.appendChild(description);
 	newMap.appendChild(dataAndTime);
 	newMap.appendChild(image);
 
@@ -48,4 +48,3 @@ module.exports.requestLevel = function() {
 }
 
 document.getElementById("but1").addEventListener("click", requestLevel);
-
