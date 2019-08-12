@@ -9,9 +9,9 @@ app.use(express.static('view'));
 app.use('/:name', function(req, res) {
     let name = req.params.name;
     switch(name) {
-        case 'cabinet': case 'input': case 'registration': 
+        case 'cabinet': case 'input': case 'registration': case 'search':
             return res.sendFile(__dirname + '/view/html/' + name + '.html');
-        default: 
+        default:
             return res.sendStatus(404);
     }
 });
@@ -19,4 +19,3 @@ app.use('/:name', function(req, res) {
 app.listen(3012, function() {
     console.log('API started');
 })
-
