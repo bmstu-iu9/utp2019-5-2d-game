@@ -42,7 +42,7 @@ module.exports.requestLevel = function() {
 	.then(function(levels) {
 		levels.foreach(level => {
 			let element = createLevelElement(level);
-			levelList.appendChild(element);
+			result.appendChild(element);
 		})
 	})
 }
