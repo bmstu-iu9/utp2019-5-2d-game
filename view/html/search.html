@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="css/search.css"/>
+  <link rel="icon" href="visual/iconka.ico"/>
+  <title>Поиск</title>
+</head>
+
+<body>
+  <div id="gameTitle">
+	   <h1>labyrinths v.1.0</h1>
+  </div>
+
+   <div id="LB"><center><img  src="visual/name.png"></center></div>
+
+  <div id= "search">
+    <form>
+      <div id= "size">
+		<div id= "MinW">
+		Width
+			<!-- Min-Width(1-64) : -->
+			<input type="range" min="1" max="64" value="1" class="number" list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;"> <span id="rangeValue">1</span> <br>
+			<datalist id="rangeList">
+				  <option value="1">
+				  <option value="2">
+				  <option value="3">
+				  <option value="4">
+				  <option value="5">
+				  <option value="6">
+				  <option value="7">
+				  <option value="8">
+				  <option value="9">
+				  <option value="10">
+				  <option value="11">
+				  <option value="12">
+				  <option value="13">
+				  <option value="14">
+				  <option value="15">
+				  <option value="16">
+				  <option value="17">
+				  <option value="18">
+				  <option value="19">
+				  <option value="20">
+				  <option value="21">
+				  <option value="22">
+				  <option value="23">
+				  <option value="24">
+				  <option value="25">
+				  <option value="26">
+				  <option value="27">
+				  <option value="28">
+				  <option value="29">
+				  <option value="30">
+				  <option value="31">
+				  <option value="32">
+				  <option value="33">
+				  <option value="34">
+				  <option value="35">
+				  <option value="36">
+				  <option value="37">
+				  <option value="38">
+				  <option value="39">
+				  <option value="40">
+				  <option value="41">
+				  <option value="42">
+				  <option value="43">
+				  <option value="44">
+				  <option value="45">
+				  <option value="46">
+				  <option value="47">
+				  <option value="48">
+				  <option value="49">
+				  <option value="50">
+				  <option value="51">
+				  <option value="52">
+				  <option value="53">
+				  <option value="54">
+				  <option value="55">
+				  <option value="56">
+				  <option value="57">
+				  <option value="58">
+				  <option value="59">
+				  <option value="60">
+				  <option value="61">
+				  <option value="62">
+				  <option value="63">
+				  <option value="64">
+			</datalist><br>
+		</div>
+
+		<div id= "MinH">
+		Height
+			<!-- Min-Height(1-64): -->
+			<input type="range" min="1" max="64" value="1" class="number1" list="rangeList1" onchange="document.getElementById('rangeValue1').innerHTML = this.value;"> <span id="rangeValue1">1</span> <br>
+			<datalist id="rangeList1">
+				  <option value="1">
+				  <option value="2">
+				  <option value="3">
+				  <option value="4">
+				  <option value="5">
+				  <option value="6">
+				  <option value="7">
+				  <option value="8">
+				  <option value="9">
+				  <option value="10">
+				  <option value="11">
+				  <option value="12">
+				  <option value="13">
+				  <option value="14">
+				  <option value="15">
+				  <option value="16">
+				  <option value="17">
+				  <option value="18">
+				  <option value="19">
+				  <option value="20">
+				  <option value="21">
+				  <option value="22">
+				  <option value="23">
+				  <option value="24">
+				  <option value="25">
+				  <option value="26">
+				  <option value="27">
+				  <option value="28">
+				  <option value="29">
+				  <option value="30">
+				  <option value="31">
+				  <option value="32">
+				  <option value="33">
+				  <option value="34">
+				  <option value="35">
+				  <option value="36">
+				  <option value="37">
+				  <option value="38">
+				  <option value="39">
+				  <option value="40">
+				  <option value="41">
+				  <option value="42">
+				  <option value="43">
+				  <option value="44">
+				  <option value="45">
+				  <option value="46">
+				  <option value="47">
+				  <option value="48">
+				  <option value="49">
+				  <option value="50">
+				  <option value="51">
+				  <option value="52">
+				  <option value="53">
+				  <option value="54">
+				  <option value="55">
+				  <option value="56">
+				  <option value="57">
+				  <option value="58">
+				  <option value="59">
+				  <option value="60">
+				  <option value="61">
+				  <option value="62">
+				  <option value="63">
+				  <option value="64">
+			</datalist><br>
+		</div>
+      </div>
+      <div class="range-num"></div>
+		<div id= "uname">
+			User Name:
+		   <input type="text">
+		   <input id="but1" type="button" value="Search" onclick=location.href="#">
+	   </div>
+    </form>
+  </div>
+
+  <div id="result">
+    <script src="requestLevels.js"></script>
+  </div>
+
+  <div style="position:absolute; bottom:0px; "id="footer">
+    <hr>
+	<center>Данный сайт разработан бедными бауманскими студентами: Чернышовым Иваном, Черненковым Андреем, Елисеевой Миленой,
+    Александровой Вероникой, Муравлевым Всеволодом и Гримбергом Дмитрием холодным летом 2019 года</center>
+  </div>
+
+</body>
+</html>

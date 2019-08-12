@@ -43,10 +43,10 @@ datalist{
 }
 
 #footer{
-	
+
 	position: fixed;
     left: 0;
-	bottom: 0; 
+	bottom: 0;
 	margin-bottom: 0.5%;
 	font-size: 80%;
 	margin-left: 1%;
@@ -57,7 +57,3 @@ datalist{
 .number, .number1 {
   width: 450px;
 }
-
-/* div { */
-	/* border: 3px outset #2A2A2A; */
-/* } */
