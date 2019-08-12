@@ -47,4 +47,4 @@ module.exports.requestLevel = function() {
 	})
 }
 
-document.getElementById("but1").addEventListener("click", requestLevel);
+document.getElementById("but1").addEventListener("click",  function(){ requestLevel });
