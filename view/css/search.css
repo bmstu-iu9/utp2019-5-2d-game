@@ -1,8 +1,15 @@
+* {
+	outline: none;
+}
+
+
 html{
 	/* max-width: 100%; */
 	height: 100%;
 	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
 }
+
+/* -------------------------------------------------------------- */
 
 h1{
 	margin: 0.5%;
@@ -17,35 +24,163 @@ h1{
 	margin-right: 1%;
 	/* margin-top: 5%; */
 	width: 30%;
-	float:right;
+	float: right;
+}
+
+/* -------------------------------------------------------------- */
+
+#search{
+	/* margin-top:3%; */
+	margin-left:5%;
 }
 
 #size{
 	float:left;
 }
 
-#search{
-	margin-top:3%;
-	margin-left:4%;
+
+#uname{
+	margin: 0.5em;
+	margin-top: 0.25em;
+	border-radius: 1em;
+	text-align: center;
+	font-weight: bold;
+	left:20px;
 }
 
-#result {
-	margin-top:8%;
-	margin-left: 5%;
-	margin-right: 5%;
-	width: 90%;
-	height: 400px;
-	background: #bebebe;
+#but1{
+	height: 3em;
+	margin: 0.5em;
+	margin-top: 0.25em;
+	border-radius: 1em;
+	text-align: center;
+	font-weight: bold;
+	width: 8.4em;
+	background: #696969;
+	color: #2A2A2A;
 }
 
+#unamet{
+	height: 3em;
+	border-radius: 1em;
+	text-align: center;
+	font-weight: bold;
+	width: 18em;
+	background: #444444;
+	color: #2A2A2A;
+}
+
+#MinH, #MinW{
+	text-align: center;
+	color: #30303;
+	font-weight: bold;
+	padding-top:2%;
+	padding-left:2%;
+	padding-right:2%;
+	
+	width: 20em;
+	height: 4.5em;
+	border: 2px inset #bebebe;
+	border-radius: 1em;
+	background: #444444;
+}
+
+.number, .number1 {
+  /* width: 300px; */
+  width: 100%;
+}
+
+
+/* -------------------------------------------------------------- */
+/* newMap.setAttribute("id", "Lalal"); */
+	/* image.setAttribute('id', "vis"); */
+	/* nameOfMap.setAttribute('id', "nom"); */
+	/* userName.setAttribute('id', "usr"); */
+	/* dataAndTime.setAttribute('id', "tim"); */
+	/* description.setAttribute('id', "des"); */
+
+#nom{
+	background: #444444;
+	border-radius: 1em;
+	padding-left:3%;
+	
+	font-size: 120%;
+	margin-left: 2%;
+	font-weight: bold;
+}
+
+#usr{
+	margin-left:2%;
+	font-weight: bold;
+}
+
+#tim{
+	/* float:right; */
+	margin-left: 2%;
+	font-weight: bold;
+	
+}
+
+#vis {
+	/* это картинка */
+	/* width: 20em; */
+	width: 30%;
+	height: 15em;
+	margin-top:2%;
+	margin-left: 1%;
+	margin-bottom: 1%;
+}
+
+#des {
+	/* это описание */
+	
+	
+	width: 50%;
+	height: 10em;
+	
+	padding-left: 1%;
+	padding-top: 1%;
+	margin-right: 10%;
+	margin-top:5%;
+	float: right;
+	
+	background: #ACACAC;
+	border: 3px inset #ACACAC;
+}
+
+#result{
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+	margin-bottom:3%;
+    width: 90%;
+    height: 350px;
+    background: #b0b0b0;
+    border: inset;
+    overflow-y: scroll;
+}
+
+/* -------------------------------------------------------------- */
+
+#Lalal {
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    height: 400px;
+    border: inset;
+    background: #bebebe;
+}
 datalist{
-  display: flex;
+	/* margin-top: 5%; */
+	display: flex;
 }
+
+/* -------------------------------------------------------------- */
 
 #footer{
-
 	position: fixed;
-    left: 0;
+  left: 0;
 	bottom: 0;
 	margin-bottom: 0.5%;
 	font-size: 80%;
@@ -54,6 +189,9 @@ datalist{
 	/* font-size: 0.8em; */
 }
 
-.number, .number1 {
-  width: 450px;
-}
+/* -------------------------------------------------------------- */
+
+
+/* div { */
+	/* border: 3px outset #2A2A2A; */
+/* } */
