@@ -18,7 +18,7 @@
   <div id= "search">
     <form>
       <div id= "size">
-		<div id= "MinW">
+		<div id= "MinW" title="Минимальная ширина лабиринта">
 		Width
 			<!-- Min-Width(1-64) : -->
 			<input type="range" min="1" max="64" value="1" class="number" list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;"> <span id="rangeValue">1</span> <br>
@@ -90,7 +90,7 @@
 			</datalist><br>
 		</div>
 
-		<div id= "MinH">
+		<div id= "MinH" title="Минимальная высота лабиринта">
 		Height
 			<!-- Min-Height(1-64): -->
 			<input type="range" min="1" max="64" value="1" class="number1" list="rangeList1" onchange="document.getElementById('rangeValue1').innerHTML = this.value;"> <span id="rangeValue1">1</span> <br>
@@ -165,12 +165,12 @@
       <div class="range-num"></div>
 		<div id= "uname">
 			User Name:
-		   <input type="text">
+		   <input type="text" title="Имя автора">
 		   <input id="but1" type="button" value="Search" onclick=location.href="#">
 	   </div>
     </form>
   </div>
-  <script src="requestLevels.js"></script>
+  <script src="js/requestLevels.js"></script>
 
   <div id="result"></div>
 
