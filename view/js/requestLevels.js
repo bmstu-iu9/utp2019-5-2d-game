@@ -89,7 +89,7 @@ let Veronika = {
     userName: "Alexandrova",
     dataAndTime: "11.08.2019 / 22:33",
     description: "Let's try it",
-    image: "ver.gif"
+    image: "visual/ver.png"
 }
 
 
@@ -101,4 +101,3 @@ var tryIt = function(level) {
 
 
 document.getElementById("but1").addEventListener("click", function(){ tryIt(Veronika) });
-
