@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8"/>
-  <link rel="stylesheet" type="text/css" href="search.css"/>
+  <link rel="stylesheet" type="text/css" href="css/search.css"/>
   <link rel="icon" href="iconka.ico"/>
   <title>Поиск</title>
 </head>
@@ -13,18 +14,13 @@
 	   <h1>labyrinths v.1.0</h1>
   </div>
 
-   <div id="LB"><center><img  src="name.png"></center></div>
+   <div id="LB"><center><img  src="visual/name.png"></center></div>
 
   <div id= "search">
     <form>
       <div id= "size">
-<<<<<<< HEAD
-		<div id= "MinW" title="Минимальная ширина лабиринта">
-		Width
-=======
-		<div id= "MinW">
+		<div id= "MinW" title="Укажите минимальную ширину лабиринта">
 		WIDTH
->>>>>>> d77e109e0359ef19531e3c253774a533081168ce
 			<!-- Min-Width(1-64) : -->
 			<input type="range" min="1" max="64" value="1" class="number" list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;"> <span id="rangeValue">1</span> <br>
 			<datalist id="rangeList">
@@ -95,13 +91,8 @@
 			</datalist><br>
 		</div>
 
-<<<<<<< HEAD
-		<div id= "MinH" title="Минимальная высота лабиринта">
-		Height
-=======
-		<div id= "MinH">
+		<div id= "MinH" title="Укажите минимальную высоту лабиринта">
 		HEIGHT
->>>>>>> d77e109e0359ef19531e3c253774a533081168ce
 			<!-- Min-Height(1-64): -->
 			<input type="range" min="1" max="64" value="1" class="number1" list="rangeList1" onchange="document.getElementById('rangeValue1').innerHTML = this.value;"> <span id="rangeValue1">1</span> <br>
 			<datalist id="rangeList1">
@@ -174,13 +165,7 @@
       </div>
       <div class="range-num"></div>
 		<div id= "uname">
-<<<<<<< HEAD
-			User Name:
-		   <input type="text" title="Имя автора">
-=======
-			<!-- User Name: -->
-		   <input type="text" id=unamet  placeholder="USER NAME">
->>>>>>> d77e109e0359ef19531e3c253774a533081168ce
+		   <input type="text" id=unamet placeholder="USER NAME" title="Имя автора">
 		   <input id="but1" type="button" value="Search" onclick=location.href="#">
 	   </div>
     </form>
