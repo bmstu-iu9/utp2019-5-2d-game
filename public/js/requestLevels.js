@@ -67,7 +67,7 @@ var create = function(level) {
 	description.appendChild(document.createTextNode(level.description));
 	image.setAttribute('src', level.image);
 
-	newMap.setAttribute("id", "Lalal");
+	newMap.setAttribute("id", "answer");
 	image.setAttribute('id', "vis");
 	nameOfMap.setAttribute('id', "nom");
 	userName.setAttribute('id', "usr");
