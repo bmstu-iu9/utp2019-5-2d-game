@@ -1,13 +1,13 @@
 * {
 	outline: none;
+	margin: 0;
+	padding: 0;
 }
 
-
-html{
-	/* max-width: 100%; */
+html {
 	height: 100%;
+	width: 100%;
 	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
-
 }
 
 h1{
@@ -109,8 +109,8 @@ h1{
 	margin-left: 10%;
 	background: url(../../visual/labirint.gif) no-repeat;
 
-	width:33%;
-	height:450px;
+	width: 450px;
+	height: 450px;
 
 	/* width:450px; */
 	/* height:450px; */
