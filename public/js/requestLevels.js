@@ -30,17 +30,19 @@ var create = function(level) {
 	return newMap;
 }
 
+
+//Example of level info
 let Veronika = {
-    nameOfMap: "BMSTU",
-    userName: "Alexandrova",
-    dataAndTime: "11.08.2019 / 22:33",
+    name: "BMSTU",
+  	author: "Alexandrova",
+    date: "11.08.2019 / 22:33",
     description: "Let's try it",
     image: "visual/ver.png"
 }
 
 
 
-var tryIt = function(name) {
+var findLevel = function(name) {
     result.innerText = '';
 	while (result.firstChild) {
         result.removeChild(first.firstChild)
@@ -58,5 +60,14 @@ var tryIt = function(name) {
     })
 }
 
+//this for final version. 'Search' is something that you're trying to find
+//document.getElementById("but1").addEventListener("click", function(){ findLevel(Search) });
 
+
+var TryIt = function(level) {
+	console.log(level);
+	result.appendChild(create(level));
+}
+
+//but for testing it out use this
 document.getElementById("but1").addEventListener("click", function(){ tryIt(Veronika) });
