@@ -4,6 +4,3 @@ node_modules/
 #logs
 logger.js
 logs
-
-# manual merge
-/public
