@@ -19,6 +19,10 @@ app.use(logger.log);
 
 app.use('/levels', levelRouter);
 
+app.get('/search', function(req, res) {
+    res.sendFile(__dirname + '/public/html/search.html');
+})
+
 app.listen(3012, function() {
     mongoose.connect("mongodb://localhost:27017/labirynth", { useNewUrlParser: true })
     .then(() => logger.msg("API started"))

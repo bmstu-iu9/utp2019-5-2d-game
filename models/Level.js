@@ -7,7 +7,7 @@ var LevelSchema = new mongoose.Schema({
     height: { type: Number,   required: true },
     map:    { type: [Number], required: true },
     name:   { type: String,   required: true },
-    author: { type: String,   required: true },
+    author: { type: String,   required: true, index: true },
     date:   { type: Number,   required: true }
 })
 
@@ -19,10 +19,8 @@ module.exports.all = function() {
     return Level.find({});
 }
 
-module.exports.list = function(sortType, page) {
-    switch (sortType) {
-        case "byAuthor": return Level.find({})
-    }
+module.exports.list = function(sortType, page, name) {
+    return Level.find({ author: name })
 }
 
 //Сreate a new level
