@@ -1,13 +1,14 @@
 // Level model for handling db
 
 var mongoose = require("mongoose");
+var User = require('./User');
 
 var LevelSchema = new mongoose.Schema({
     width:  { type: Number,   required: true },
     height: { type: Number,   required: true },
     map:    { type: [Number], required: true },
     name:   { type: String,   required: true },
-    author: { type: String,   required: true, index: true },
+    author: { type: String,   required: true },
     date:   { type: Number,   required: true }
 })
 
@@ -19,8 +20,8 @@ module.exports.all = function() {
     return Level.find({});
 }
 
-module.exports.list = function(sortType, page, name) {
-    return Level.find({ author: name })
+module.exports.findByAuthor = function(name) {
+    return User.getByName(name).then(user => user ? user.maps:[])
 }
 
 //Сreate a new level
