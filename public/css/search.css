@@ -147,14 +147,15 @@ datalist {
 
 hr {
 	width: 100vw;
+	margin-bottom: 1.5em;
 }
 
 #footer {
+	width: 100vw;
 	text-align: center;
 	position: fixed;
   left: 0;
 	bottom: 0;
 	margin-bottom: 0.5%;
 	font-size: 0.75em;
-	margin-left: 1%;
 }

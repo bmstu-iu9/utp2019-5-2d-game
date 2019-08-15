@@ -1,14 +1,17 @@
 * {
 	outline: none;
+	margin: 0;
+	padding: 0;
 }
 
-html{
+html {
 	height: 100%;
+	width: 100%;
 	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
 }
 
 /* -------------------------------------------------------------- */
-h1{
+h1 {
 	margin: 0.5%;
 	font-size: 60%;
 	color: #EBEBEB;
@@ -26,7 +29,7 @@ h1{
 
 /* -------------------------------------------------------------- С ЭТИМ ПОТОМ РАЗОБРАТЬСЯ */
 
-#LB{
+#LB {
 	/* margin-right: 5em; */
 	margin-top: 2%;
 	left: 50%;
@@ -35,7 +38,7 @@ h1{
 
 /* -------------------------------------------------------------- */
 
-#base{
+#base {
 	width: 20%;
 	margin-top: 5%;
 	margin-right: auto;
@@ -43,7 +46,7 @@ h1{
 
 }
 
-#Name, #Password, #Password1, #Login, #Check_in{
+#Name, #Password, #Password1, #Login, #Check_in {
 	height: 3em;
 	width: 18em;
 	margin: 0.5em;
@@ -54,17 +57,17 @@ h1{
 	color: #2A2A2A;
 }
 
-#Login, #Password, #Name, #Password1{
+#Login, #Password, #Name, #Password1 {
 	background: #444444;
 }
 
-#Check_in{
+#Check_in {
 	background: #696969;
 }
 
 /* -------------------------------------------------------------- */
 
-#gif, #gif1{
+#gif, #gif1 {
 	margin-top: 2%;
 	padding: 0.1em;
 	/* width:450px; */
@@ -74,26 +77,31 @@ h1{
 	margin-bottom: 3%;
 }
 
-#gif{
+#gif {
 	float: left;
 	margin-left: 3%;
 }
-#gif1{
-	float:right;
+
+#gif1 {
+	float: right;
 	margin-right: 3%;
 }
 
 /* -------------------------------------------------------------- */
 
+hr {
+	width: 100vw;
+	margin-bottom: 1.5em;
+}
 
 #footer {
+	width: 100vw;
 	text-align: center;
 	position: fixed;
   left: 0;
 	bottom: 0;
 	margin-bottom: 0.5%;
 	font-size: 0.75em;
-	margin-left: 1%;
 }
 
 /* -------------------------------------------------------------- */
