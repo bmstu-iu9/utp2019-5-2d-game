@@ -1,57 +1,3 @@
-/*module.exports.createLelelElement = function(level) {
-	var newMap = document.createElement("div")
-		, nameOfMap = document.createElement("p")
-		, userName = document.createElement("p")
-		, dataAndTime = document.createElement("p")
-		, description = document.createElement("p")
-		, image = document.createElement("img");
-
-	nameOfMap.appendChild(document.createTextNode(level.nameOfMap));
-	userName.appendChild(document.createTextNode(level.userName));
-	dataAndTime.appendChild(document.createTextNode(level.dataAndTime));
-	description.appendChild(document.createTextNode(level.description));
-	image.setAttribute('src', level.image);
-
-	newMap.appendChild(nameOfMap);
-	newMap.appendChild(userName);
-	newMap.appendChild(description);
-	newMap.appendChild(dataAndTime);
-	newMap.appendChild(image);
-
-	return newMap;
-}
-
-
-//Example of level in fucntion createLelelElement, that's what I need in json file: nameOfMap, userName, data, description, source of image;
-//Could be changed in the future
-let Veronika = {
-	nameOfMap: "BMSTU",
-	userName: "Alexandrova",
-	dataAndTime: "11.08.2019 / 22:33",
-	description: "Let's try it",
-	image: "ver.jpg"
-}
-
-
-
-//Same goes for output, for each level
-
-module.exports.requestLevel = function() {
-	fetch('/levels')
-	.then(function(res) { return res.json(); })
-	.then(function(levels) {
-		levels.foreach(level => {
-			let element = createLevelElement(level);
-			levelList.appendChild(element);
-		})
-	})
-}
-
-document.getElementById("but1").addEventListener("click", requestLevel);
-
-
-*/
-
 
 var create = function(level) {
 	var newMap = document.createElement("div")
@@ -61,9 +7,9 @@ var create = function(level) {
 		, description = document.createElement("p")
 		, image = document.createElement("img");
 
-	nameOfMap.appendChild(document.createTextNode(level.nameOfMap));
-	userName.appendChild(document.createTextNode(level.userName));
-	dataAndTime.appendChild(document.createTextNode(level.dataAndTime));
+	nameOfMap.appendChild(document.createTextNode(level.name));
+	userName.appendChild(document.createTextNode(level.author));
+	dataAndTime.appendChild(document.createTextNode(level.date));
 	description.appendChild(document.createTextNode(level.description));
 	image.setAttribute('src', level.image);
 
@@ -84,20 +30,44 @@ var create = function(level) {
 	return newMap;
 }
 
+
+//Example of level info
 let Veronika = {
-    nameOfMap: "BMSTU",
-    userName: "Alexandrova",
-    dataAndTime: "11.08.2019 / 22:33",
-    description: "Let's try it",
-    image: "visual/ver.png"
+	name: "BMSTU",
+	author: "Alexandrova",
+	date: "11.08.2019 / 22:33",
+	description: "Let's try it",
+	image: "visual/ver.png"
 }
 
+
+
+var findLevel = function(name) {
+    result.innerText = '';
+	while (result.firstChild) {
+        result.removeChild(first.firstChild)
+    }
+    fetch(`/levels/${name}`)
+    .then(function (res) {
+        console.log(res);
+        return res.json();
+    })
+    .then(function (levels) {
+        console.log(levels);
+        levels.forEach(function (level) {
+            result.appendChild(create(level));
+        })
+    })
+}
+
+//this for final version. 'Search' is something that you're trying to find
+//document.getElementById("but1").addEventListener("click", function(){ findLevel(Search) });
 
 
 var tryIt = function(level) {
-	var element = create(level);
-	result.appendChild(element);
+	console.log(level);
+	result.appendChild(create(level));
 }
 
-
+//but for testing it out use this
 document.getElementById("but1").addEventListener("click", function(){ tryIt(Veronika) });

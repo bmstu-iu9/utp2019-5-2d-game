@@ -17,20 +17,31 @@ UserSchema.methods.validPassword = function(pwd) {
 }
 
 module.exports.createUser = function(name, password) {
-    var
-        salt = crypto.randomBytes(8).toString('hex'),
-        hash = crypto.pbkdf2(pwd, this.salt, 1000, 64, 'sha512').toString('hex');
-
-    return new User({
-        name: name,
-        salt: salt,
-        hash: hash,
-        maps: []
-    }).save();
-
+    return new Promise(function(resolve, reject) {
+       crypto.randomBytes(8, function(err, salt) {
+           if (err) return reject(err);
+            crypto.pbkdf2(password, salt.toString('hex'), 1000, 64, 'sha512', function (err, hash) {
+                //console.log(hash.toString('hex'));
+                resolve({
+                    salt: salt.toString('hex'), 
+                    hash: hash.toString('hex')
+                });
+            })
+       })
+    })
+    .then((pwd) => {
+        //console.log(salt);
+        //console.log(hash);
+        return new User({
+            username: name,
+            salt: pwd.salt,
+            hash: pwd.hash,
+            maps: []
+        }).save();
+    });
 }
 
-module.exports.getUserByName = function(name) {
-    return User.find({name: name});
+module.exports.getByName = function(name) {
+    return User.findOne({name: name});
 }
 

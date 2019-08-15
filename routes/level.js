@@ -3,10 +3,17 @@ var Level = require("../models/Level");
 
 var levelEditorRouter = new Router();
 
-levelEditorRouter.get('/', function(req, res) {
-    Level.all().then(docs => res.send(docs)).catch((err) => {
+levelEditorRouter.get('/:name', function(req, res) {
+    let arr = Level.findByAuthor(req.params.name).then(arr => res.send(arr)).catch(err => {
         console.log(err);
-        res.sendStatus(500)
+        res.send([]);
+    })
+})
+
+levelEditorRouter.get('/', function(req, res) {
+    Level.list().then(docs => res.send(docs)).catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
     })
 })
 
