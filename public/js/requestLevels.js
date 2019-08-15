@@ -33,11 +33,11 @@ var create = function(level) {
 
 //Example of level info
 let Veronika = {
-    name: "BMSTU",
-  	author: "Alexandrova",
-    date: "11.08.2019 / 22:33",
-    description: "Let's try it",
-    image: "visual/ver.png"
+	name: "BMSTU",
+	author: "Alexandrova",
+	date: "11.08.2019 / 22:33",
+	description: "Let's try it",
+	image: "visual/ver.png"
 }
 
 
@@ -64,7 +64,7 @@ var findLevel = function(name) {
 //document.getElementById("but1").addEventListener("click", function(){ findLevel(Search) });
 
 
-var TryIt = function(level) {
+var tryIt = function(level) {
 	console.log(level);
 	result.appendChild(create(level));
 }
