@@ -10,40 +10,24 @@ html {
 	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
 }
 
-/* -------------------------------------------------------------- */
 h1 {
 	margin: 0.5%;
 	font-size: 60%;
 	color: #EBEBEB;
-	float:left;
+	float: left;
 }
-
-/* #gameTitle{ */
-
-	/* height: 2%; */
-	/* width: 5%; */
-	/* position: fixed; */
-	/* padding: 0.1%; */
-	/* float: left; */
-/* } */
-
-/* -------------------------------------------------------------- С ЭТИМ ПОТОМ РАЗОБРАТЬСЯ */
 
 #LB {
-	/* margin-right: 5em; */
-	margin-top: 2%;
-	left: 50%;
-	width: 30%;
+	margin-top: 2vh;
+	width: 30vw;
+	left: 40vw;
 }
 
-/* -------------------------------------------------------------- */
-
 #base {
-	width: 20%;
-	margin-top: 5%;
+	width: 20vw;
+	margin-top: 15vh;
 	margin-right: auto;
 	margin-left: auto;
-
 }
 
 #Name, #Password, #Password1, #Login, #Check_in {
@@ -65,29 +49,22 @@ h1 {
 	background: #696969;
 }
 
-/* -------------------------------------------------------------- */
-
 #gif, #gif1 {
-	margin-top: 2%;
-	padding: 0.1em;
-	/* width:450px; */
-	width:35%;
-	height:340px;
+	margin-top: 3vw;
+	width: 450px;
+	height: 338px;
 	background: url(../../visual/lab.png) no-repeat;
-	margin-bottom: 3%;
 }
 
 #gif {
-	float: left;
-	margin-left: 3%;
+	left: 3vw;
+	position: absolute;
 }
 
 #gif1 {
-	float: right;
-	margin-right: 3%;
+	right: 3vw;
+	position: absolute;
 }
-
-/* -------------------------------------------------------------- */
 
 hr {
 	width: 100vw;
@@ -101,11 +78,5 @@ hr {
   left: 0;
 	bottom: 0;
 	margin-bottom: 0.5%;
-	font-size: 0.75em;
+	font-size: 0.95vw;
 }
-
-/* -------------------------------------------------------------- */
-
-/* div { */
-	/* border: 3px outset #2A2A2A; */
-/* } */
