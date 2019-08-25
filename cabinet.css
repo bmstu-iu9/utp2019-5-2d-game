@@ -1,102 +1,61 @@
 * {
 	outline: none;
+	margin: 0;
+	padding: 0;
 }
 
-html{
-	height:100%;
-	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
+html {
+	height: 100%;
+	width: 100%;
+	background: url(../visual/cabinet.jpg) no-repeat;
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
 }
 
-/* -------------------------------------------------------------- */
-
-h1{
-	margin: 0.5%;
-	font-size: 60%;
-	color: #EBEBEB;
-	/* float:left; */
-}
-
-/* #gameTitle{ */
-
-	/* height: 2%; */
-	/* width: 5%; */
-	/* position: fixed; */
-	/* padding: 0.1%; */
-	/* float: left; */
-/* } */
-
-
-/* -------------------------------------------------------------- */
-
-#LB{
-	/* margin-right: 5em; */
-	margin-top: 2%;
-	/* left: 50%; */
-	width: 30%;
-	/* float: left; */
-}
-
-/* -------------------------------------------------------------- */
-
-#base{
-	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
-	border: 4px outset #2A2A2A;
-	/* width: 20em; */
-	/* margin-top: 7em; */
-	width: 20%;
-	margin-top: 5%;
-	
+#base {
+	width: 20vw;
+	margin-top: 50vh;
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: auto;
 	padding-right: auto;
 }
 
-
-#view , #editor, #play{
+#view , #editor, #play, #uname {
 	height: 3em;
-	width: 18em;
+	width: 20vw;
 	margin: 0.5em;
 	margin-top: 0.25em;
-	border-radius: 1em;
+	border-radius: 3em;
 	text-align: center;
 	font-weight: bold;
 	color: #2A2A2A;
 }
 
-#view , #editor{
-	background: #444444;
-	color: #2A2A2A;
+#view , #editor {
+	background: #000;
+	color: #fff;
 }
 
-#play{
-	background: #696969;
-	color: #2A2A2A;
+#uname {
+	background: #ffe02f;
+	color: #000;
 }
 
-/* -------------------------------------------------------------- */
+#play {
+	background: #ffe02f;
+	color: #000;
+	width: 10vw;
+	margin-left: 5vw;
+}
 
-#footer{
-	
+#footer {
+	width: 75.4vw;
+	margin-left: 12.3vw;
+	text-align: center;
 	position: fixed;
-    left: 0;
-	bottom: 0; 
-	margin-bottom: 0.5%;
-	font-size: 80%;
-	margin-left: 1%;
-	/* margin:1em; */
-	/* font-size: 0.8em; */
-}	
-
-/* -------------------------------------------------------------- */
-
-/* div { */
-	/* border: 3px outset #2A2A2A; */
-/* } */
-
-
-
-
-/* Кароче,Вероника,если ты это читаешь,то тут у меня возникла проблема */
-/* Связанная с тем что h1, т.е. наше название */
-/* На каждой странице на разных уровнях, я потом с этим разберусь */
+	bottom: 0;
+	font-size: 0.8vw;
+	font-weight: 650;
+	background: #ffe02f;
+}
