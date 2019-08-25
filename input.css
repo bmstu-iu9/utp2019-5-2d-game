@@ -1,144 +1,69 @@
 * {
 	outline: none;
+	margin: 0;
+	padding: 0;
 }
 
-/* -------------------------------------------------------------- */
-/* -------------------------------------------------------------- */
-
-html{
-	/* max-width: 100%; */
+html {
 	height: 100%;
-	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
-
+	width: 100%;
+	background: url(../visual/input.jpg) no-repeat;
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
 }
 
-h1{
-	margin: 0.5%;
-	font-size: 60%;
-	color: #EBEBEB;
-	float:left;
-}
-
-/* #gameTitle{ */
-	/* height: 2%; */
-	/* width: 5%; */
-	/* padding: 0.1%; */
-	/* float: left; */
-/* } */
-
-/* -------------------------------------------------------------- */
-
-#LB{
-	background-attachment: fixed;
-	/* display: grid; */
-	margin-right: 10%;
-	margin-top: 5%;
-	width: 30%;
-	float:right;
-
-	/* margin-right: 1em; */
-	/* margin-top: 3em; */
-}
-
-/* -------------------------------------------------------------- */
-
-#base{
-
+ #base {
 	min-width: 5%;
-
-	width: 20%;
-	height: 10%;
-	margin-top: 10%;
-
-	/* width: 16em; */
-	/* height: 11em; */
-	/* margin-top: 9em; */
-
-
-	/* margin-right: 1em; */
-	float: right;
-
+	width: 20vw;
+	height: 20vh;
+	left: 5vw;
+	top: 53vh;
+	position: absolute;
+	float: left;
 }
 
-#Login,#InPut, #Check_in, #Password{
-	height: 3em;
-	margin: 0.5em;
-	margin-top: 0.25em;
-	border-radius: 1em;
-	text-align: center;
+ #Login, #InPut, #Check_in, #Password {
+	height: 4vh;
+	border-radius: 3em;
+	text-align: left;
 	font-weight: bold;
+	margin-top: 4px;
 }
 
-#Login, #Password{
-	width: 18em;
-	background: #444444;
-	color: #2A2A2A;
+#Login, #Password {
+	width: 17vw;
+	background: #000;
+	color: #fff;
+	letter-spacing: 0.2em;
+	font-size: 1.7vh;
+	text-indent: 5px;
+	color: #fff;
 }
 
-#InPut, #Check_in{
-	width: 8.4em;
-	background: #696969;
-	color: #2A2A2A;
+#Check_in {
+	width: 8vw;
+	background: #ffe02f;
+	font-size: 1.9vh;
+	text-align: center;
+	margin-left: 0.6vw;
 }
 
-/* -------------------------------------------------------------- */
-
-
-#dop{
-	margin-top: 2%;
-	/* margin-right: 0.3%; */
-	/* margin-bottom: 2%; */
-
-		display:inline-block;
-	/* margin-top: 3em; */
-	/* margin-right: 1em; */
-
-	width: 15%;
-	height: 375px;
-
-	/* width: 200px; */
-	/* height: 375px; */
-
-	float: right;
-	left: 100%;
-	background: url(visual/ugol.png) no-repeat;
+#InPut {
+	width: 8vw;
+	background: #ffe02f;
+	color: #000;
+	font-size: 1.9vh;
+	text-align: center;
+	margin-left: 0.2vw;
 }
 
-#gif {
-	/* margin-top:5em; */
-	/* margin-left: 7em; */
-	margin-top: 5%;
-	margin-left: 10%;
-
-
-	background: url(visual/labirint.gif) no-repeat;
-
-	width:33%;
-	height:450px;
-
-	/* width:450px; */
-	/* height:450px; */
-
-	float:left;
-	border: 7px outset #2A2A2A;
-}
-
-/* -------------------------------------------------------------- */
-
-#footer{
-
+#footer {
+	width: 75.4vw;
+	text-align: center;
 	position: fixed;
-    left: 0;
+  right: 5px;
 	bottom: 0;
-	margin-bottom: 0.5%;
-	font-size: 80%;
-	margin-left: 1%;
-	/* margin:1em; */
-	/* font-size: 0.8em; */
+	font-size: 0.8vw;
+	font-weight: 650;
+	background: #ffe02f;
 }
-
-/* -------------------------------------------------------------- */
-
-/* div { */
-	/* border: 3px outset #2A2A2A; */
-/* } */
