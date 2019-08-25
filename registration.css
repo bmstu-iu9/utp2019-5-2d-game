@@ -1,105 +1,54 @@
 * {
 	outline: none;
+	margin: 0;
+	padding: 0;
 }
 
-html{
+html {
 	height: 100%;
-	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
+	width: 100%;
+	background: url(../visual/registration.jpg) no-repeat;
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
 }
 
-/* -------------------------------------------------------------- */
-h1{
-	margin: 0.5%;
-	font-size: 60%;
-	color: #EBEBEB;
-	float:left;
-}
-
-/* #gameTitle{ */
-
-	/* height: 2%; */
-	/* width: 5%; */
-	/* position: fixed; */
-	/* padding: 0.1%; */
-	/* float: left; */
-/* } */
-
-/* -------------------------------------------------------------- С ЭТИМ ПОТОМ РАЗОБРАТЬСЯ */
-
-#LB{
-	/* margin-right: 5em; */
-	margin-top: 2%;
-	left: 50%;
-	width: 30%;
-}
-
-/* -------------------------------------------------------------- */
-
-#base{
-	width: 20%;
-	margin-top: 5%;
+#base {
+	width: 20vw;
+	margin-top: 28%;
 	margin-right: auto;
 	margin-left: auto;
-	
 }
 
-#Name, #Password, #Password1, #Login, #Check_in{
-	height: 3em;
-	width: 18em;
-	margin: 0.5em;
-	margin-top: 0.25em;
-	border-radius: 1em;
-	text-align: center;
+#Name, #Password, #Password1, #Login, #Check_in {
+	height: 4vh;
+	width: 20vw;
+	border-radius: 3em;
+	text-align: left;
 	font-weight: bold;
-	color: #2A2A2A;
+	margin-top: 4px;
 }
 
-#Login, #Password, #Name, #Password1{
-	background: #444444;
+#Login, #Password, #Name, #Password1 {
+	letter-spacing: 0.2em;
+	text-indent: 5px;
+	background: #000;
+	color: #fff;
 }
 
-#Check_in{
-	background: #696969;
+#Check_in {
+	text-align: center;
+	width: 8vw;
+	background: #ffe02f;
+	font-size: 1.9vh;
 }
 
-/* -------------------------------------------------------------- */
-
-#gif, #gif1{
-	margin-top: 2%;
-	padding: 0.1em;
-	/* width:450px; */
-	width:35%;
-	height:340px;
-	background: url(visual/lab.png) no-repeat;
-	margin-bottom: 3%;
-}
-
-#gif{
-	float: left;
-	margin-left: 3%;
-}
-#gif1{
-	float:right;
-	margin-right: 3%;
-}
-
-/* -------------------------------------------------------------- */
-
-
-#footer{
-	
+#footer {
+	width: 75.4vw;
+	margin-left: 12.3vw;
+	text-align: center;
 	position: fixed;
-    left: 0;
-	bottom: 0; 
-	margin-bottom: 0.5%;
-	font-size: 80%;
-	margin-left: 1%;
-	/* margin:1em; */
-	/* font-size: 0.8em; */
+	bottom: 0;
+	font-size: 0.8vw;
+	font-weight: 650;
+	background-color: #ffe02f;
 }
-
-/* -------------------------------------------------------------- */
-
-/* div { */
-	/* border: 3px outset #2A2A2A; */
-/* } */
