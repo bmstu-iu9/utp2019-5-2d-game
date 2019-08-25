@@ -7,76 +7,48 @@
 html {
 	height: 100%;
 	width: 100%;
-	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
-}
-
-h1 {
-	margin: 0.5%;
-	font-size: 60%;
-	color: #EBEBEB;
-	float: left;
-}
-
-#LB {
-	margin-top: 2vh;
-	width: 30vw;
-	left: 40vw;
+	background: url(../visual/registration.jpg) no-repeat;
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
 }
 
 #base {
 	width: 20vw;
-	margin-top: 15vh;
+	margin-top: 28%;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 #Name, #Password, #Password1, #Login, #Check_in {
-	height: 3em;
-	width: 18em;
-	margin: 0.5em;
-	margin-top: 0.25em;
-	border-radius: 1em;
-	text-align: center;
+	height: 4vh;
+	width: 20vw;
+	border-radius: 3em;
+	text-align: left;
 	font-weight: bold;
-	color: #2A2A2A;
+	margin-top: 4px;
 }
 
 #Login, #Password, #Name, #Password1 {
-	background: #444444;
+	letter-spacing: 0.2em;
+	text-indent: 5px;
+	background: #000;
+	color: #fff;
 }
 
 #Check_in {
-	background: #696969;
-}
-
-#gif, #gif1 {
-	margin-top: 3vw;
-	width: 450px;
-	height: 338px;
-	background: url(../../visual/lab.png) no-repeat;
-}
-
-#gif {
-	left: 3vw;
-	position: absolute;
-}
-
-#gif1 {
-	right: 3vw;
-	position: absolute;
-}
-
-hr {
-	width: 100vw;
-	margin-bottom: 1.5em;
+	text-align: center;
+	width: 8vw;
+	background: #ffe02f;
+	font-size: 1.9vh;
 }
 
 #footer {
-	width: 100vw;
+	width: 75.4vw;
+	margin-left: 12.3vw;
 	text-align: center;
 	position: fixed;
-  left: 0;
 	bottom: 0;
-	margin-bottom: 0.5%;
-	font-size: 0.95vw;
+	font-size: 0.8vw;
+	font-weight: 650;
+	background-color: #ffe02f;
 }
