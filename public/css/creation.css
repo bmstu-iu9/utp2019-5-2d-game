@@ -43,6 +43,7 @@ html {
 		margin-top: 60px;
 		margin-bottom: 15px;
 		height: 100px;
+		width: 14vw;
 	}
 }
 
@@ -70,6 +71,7 @@ html {
 		margin-top: 20px;
 		margin-bottom: 15px;
 		height: 100px;
+		width: 14vw;
 	}
 }
 
@@ -118,5 +120,5 @@ html {
 }
 
 #number, #number1 {
-  width: 90%;
+  width: 88%;
 }
