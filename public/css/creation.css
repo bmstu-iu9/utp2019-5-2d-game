@@ -28,6 +28,11 @@ html {
 		position: fixed;
 	}
 
+	#cvs {
+		width: 100%;
+		height: calc(100vh - 202px);
+	}
+
 	#menu {
 		width: 50px;
 		height: calc(100vh - 202px);
@@ -54,6 +59,11 @@ html {
 		margin-top: 25vh;
 		bottom: 0;
 		position: fixed;
+	}
+
+	#cvs {
+		width: 100%;
+		height: calc(100vh - 135px);
 	}
 
 	#menu {
@@ -114,9 +124,13 @@ html {
 	font-size: 0.8em;
 }
 
-#line, #circle, #brush, #eraser, #grid, #palette, #square {
+#lineDiv, #circle, #brush, #eraser, #gridDiv, #square {
 	padding-top: 10px;
 	padding-left: 10px;
+}
+#palette {
+	padding-top: 10px;
+	padding-left: 2px;
 }
 
 #number, #number1 {

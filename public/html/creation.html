@@ -27,17 +27,35 @@
 
     <div id="menu">
       <form id="icons">
-        <div id="line"><img src="../visual/icons/line.png" width=30px height=30px></div><br><hr>
-        <div id="brush"><img src="../visual/icons/brush.png" width=30px height=30px></div><br><hr>
-        <div id="square"><img src="../visual/icons/square.png" width=30px height=30px></div><br><hr>
-        <div id="circle"><img src="../visual/icons/circle.png" width=30px height=30px></div><br><hr>
+        <!-- <div id="lineDiv"><img id="line" src="../visual/icons/line.png" width=30px height=30px></div><br><hr>
+        <input type = "button" id="line" value="LINE">
+        <div id="brush"><img id="draw" src="../visual/icons/brush.png" width=30px height=30px></div><br><hr>
+        <div id="square"><img id="rect" src="../visual/icons/square.png" width=30px height=30px></div><br><hr>
+        <div id="circle"><img id="arc" src="../visual/icons/circle.png" width=30px height=30px></div><br><hr>
         <div id="eraser"><img src="../visual/icons/eraser.png" width=30px height=30px></div><br><hr>
+        <div id="palette"><input type="color" src="../visual/icons/palette.png" width=30px height=30px></div><br><hr>
         <div id="palette"><img src="../visual/icons/palette.png" width=30px height=30px></div><br><hr>
-        <div id="grid"><img src="../visual/icons/grid.png" width=30px height=30px></div><br><hr>
+        <div id="gridDiv"><img id="grid" src="../visual/icons/grid.png" width=30px height=30px></div><br><hr>
+        <input type = "button" id="reset" value="RESET"><br><hr>
+        <input type = "button" id="load" value="LOAD"><br><hr>
+        <input type = "button" id="back" value="BACK"><br><hr>-->
+        <input type = "color" id="color">
+        <!-- <input type = "button" id="draw" value="DRAW"> -->
+        <div id="brush"><img id="draw" src="../visual/icons/brush.png" width=30px height=30px></div><br><hr>
+        <input type = "button" id="line" value="LINE">
+        <input type = "button" id="rect" value="RECT">
+        <input type = "button" id="arc" value="ARC">
+        <input type = "button" id="reset" value="RESET">
+        <input type = "button" id="load" value="LOAD">
+        <input type = "button" id="back" value="BACK">
+        <input type = "button" id="grid" value="GRID">
       </form>
     </div>
+    <div id="base">
+      <canvas id = "cvs"></canvas>
+    </div>
 
-    <div id="base"></div>
+    <script src="../js/game1_1.js"></script>
 </div>
 </body>
 
