@@ -13,8 +13,8 @@ html {
 	font-family: 'Montserrat', sans-serif;
 }
 
-#base {
-	width: calc(100vw - 63px);
+#base, #cvs {
+	width: calc(100vw - 73px);
 	height: calc(100vh - 135px);
 	float: left;
 }
@@ -28,18 +28,15 @@ html {
 		position: fixed;
 	}
 
-	#cvs {
-		width: 100%;
-		height: calc(100vh - 202px);
-	}
-
 	#menu {
-		width: 50px;
+		width: 60px;
 		height: calc(100vh - 202px);
 		margin-left: 8px;
 		float: left;
 		border-right: solid 5px;
 		background-color: #ffe02f;
+		overflow-y: auto;
+		overflow-x: hidden;
 	}
 
 	#size {
@@ -61,18 +58,15 @@ html {
 		position: fixed;
 	}
 
-	#cvs {
-		width: 100%;
-		height: calc(100vh - 135px);
-	}
-
 	#menu {
-		width: 50px;
+		width: 60px;
 		height: calc(100vh - 135px);
 		margin-left: 8px;
 		float: left;
 		border-right: solid 5px;
 		background-color: #ffe02f;
+		overflow-y: auto;
+		overflow-x: hidden;
 	}
 
 	#size {
@@ -83,6 +77,10 @@ html {
 		height: 100px;
 		width: 14vw;
 	}
+}
+
+::-webkit-scrollbar {
+	width: 2px
 }
 
 /* #creationLab {
@@ -124,13 +122,22 @@ html {
 	font-size: 0.8em;
 }
 
-#lineDiv, #circle, #brush, #eraser, #gridDiv, #square {
+#lineDiv, #circle, #brush, #eraserDiv, #gridDiv, #square {
+	width: 35px;
+	height: 35px;
 	padding-top: 10px;
 	padding-left: 10px;
 }
+
 #palette {
+	width: 35px;
+	height: 35px;
 	padding-top: 10px;
-	padding-left: 2px;
+	padding-left: 3px;
+}
+
+hr {
+	top: 0;
 }
 
 #number, #number1 {
