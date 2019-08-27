@@ -26,16 +26,19 @@
 <div id="creationLab">
     <div id="menu">
       <form id="icons">
-        <div id="lineDiv"><img id="line" src="../visual/icons/line.png" width=30px height=30px></div><br><hr>
-        <div id="brush"><img id="draw" src="../visual/icons/brush.png" width=30px height=30px></div><br><hr>
-        <div id="square"><img id="rect" src="../visual/icons/square.png" width=30px height=30px></div><br><hr>
-        <div id="circle"><img id="arc" src="../visual/icons/circle.png" width=30px height=30px></div><br><hr>
-        <div id="eraserDiv"><img id="eraser" src="../visual/icons/eraser.png" width=30px height=30px></div><br><hr>
-        <div id="gridDiv"><img id="grid" src="../visual/icons/grid.png" width=30px height=30px></div><br><hr>
-        <div id="palette"><input id="color" type="color" width=30px></div><br><hr>
-        <div id="resetDiv"><input type = "button" id="reset" value="RESET"></div><br><hr>
-        <div id="loadDiv"><input type = "button" id="load" value="LOAD"></div><br><hr>
-        <div id="backDiv"><input type = "button" id="back" value="BACK"></div><br><hr>
+        <div class="tooling"><img class="toolingVisual" id="grid" src="../visual/icons/grid.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="draw" src="../visual/icons/brush.png"></div><hr>
+        <div class="tooling">
+          <img id="line" src="../visual/icons/line.png">
+          <input type="range" min="1" max="10" value="1" id=number2 orient="vertical">
+        </div><hr>
+        <div class="tooling"><img class="toolingVisual" id="rect" src="../visual/icons/square.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="arc" src="../visual/icons/circle.png"></div><hr>
+        <div class="tooling"><input class="toolingVisual" id="color" type="color"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="eraser" src="../visual/icons/eraser.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="back" src="../visual/icons/cancellation.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="reset" src="../visual/icons/basket.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="load" src="../visual/icons/floppy.png"></div><hr>
       </form>
     </div>
     <div id="base">
