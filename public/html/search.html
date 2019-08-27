@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/search.css"/>
+    <link rel="icon" href="../visual/iconka.ico"/>
+    <title>Поиск</title>
+    <style>
+     input[type="text"] {
+      color: #d4d4d4;
+     }
+     input[type="text"]::-webkit-input-placeholder {
+      color: #d4d4d4;
+     }
+     input[type="text"]::-moz-placeholder {
+      color: #d4d4d4;
+     }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <div id="size">
+        <div id="MinW" title="Укажите минимальную ширину лабиринта">
+          WIDTH <br>
+          <input type="range" min="1" max="64" value="1" id=number onchange="document.getElementById('rangeValue').innerHTML = this.value;"> <span id="rangeValue">1</span> <br>
+        </div>
+        <div id="MinH" title="Укажите минимальную высоту лабиринта">
+          HEIGHT <br>
+          <input type="range" min="1" max="64" value="1" id=number1 onchange="document.getElementById('rangeValue1').innerHTML = this.value;"> <span id="rangeValue1">1</span> <br>
+        </div>
+      </div>
+
+      <div id="uname">
+        <input type="text" id=unamet placeholder="USER NAME" title="Имя автора">
+        <input id="but1" type="button" value="Search">
+      </div>
+    </form>
+
+    <script src="../js/requestLevels.js"></script>
+
+    <div id="result"></div>
+
+    <div id="footer">
+      Данный сайт разработан: Чернышовым Иваном, Черненковым Андреем, Елисеевой Миленой,
+      Александровой Вероникой, Муравлевым Всеволодом и Гримбергом Дмитрием
+    </div>
+  </body>
+
+</html>

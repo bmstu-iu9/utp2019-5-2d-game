@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="../css/creation.css"/>
+  <link rel="icon" href="../visual/iconka.ico"/>
+  <title>Редактор лабиринта</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <form>
+    <div id="size">
+      <div id="MinW" title="Укажите минимальную ширину лабиринта">
+        WIDTH<br>
+        <input type="range" min="1" max="64" value="1" id=number list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;"> <span id="rangeValue">1</span> <br>
+      </div>
+      <div id="MinH" title="Укажите минимальную высоту лабиринта">
+        HEIGHT<br>
+        <input type="range" min="1" max="64" value="1" id=number1 list="rangeList1" onchange="document.getElementById('rangeValue1').innerHTML = this.value;"> <span id="rangeValue1">1</span> <br>
+      </div>
+    </div>
+  </form>
+
+<div id="creationLab">
+    <div id="menu">
+      <form id="icons">
+        <div class="tooling"><img class="toolingVisual" id="grid" src="../visual/icons/grid.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="draw" src="../visual/icons/brush.png"></div><hr>
+        <div class="tooling">
+          <img id="line" src="../visual/icons/line.png">
+          <input type="range" min="1" max="10" value="1" id=number2 orient="vertical">
+        </div><hr>
+        <div class="tooling"><img class="toolingVisual" id="rect" src="../visual/icons/square.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="arc" src="../visual/icons/circle.png"></div><hr>
+        <div class="tooling"><input class="toolingVisual" id="color" type="color"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="eraser" src="../visual/icons/eraser.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="back" src="../visual/icons/cancellation.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="reset" src="../visual/icons/basket.png"></div><hr>
+        <div class="tooling"><img class="toolingVisual" id="load" src="../visual/icons/floppy.png"></div><hr>
+      </form>
+    </div>
+    <div id="base">
+      <canvas id = "cvs"></canvas>
+    </div>
+
+    <script src="../js/game1_1.js"></script>
+</div>
+</body>
+
+</html>

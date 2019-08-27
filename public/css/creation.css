@@ -1,0 +1,157 @@
+* {
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	background: url(../visual/creation.jpg) no-repeat;
+	background-size: cover;
+	background-position: left top;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#base, #cvs {
+	width: calc(100vw - 73px);
+	height: calc(100vh - 135px);
+	float: left;
+}
+
+@media screen and (min-width: 1920px) {
+	#creationLab {
+		width: 100%;
+		height: calc(100vh - 202px);
+		margin-top: 25vh;
+		bottom: 0;
+		position: fixed;
+	}
+
+	#menu {
+		width: 60px;
+		height: calc(100vh - 202px);
+		margin-left: 8px;
+		float: left;
+		border-right: solid 5px;
+		background-color: #ffe02f;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	#size {
+		float: left;
+		margin-left: 5px;
+		margin-top: 60px;
+		margin-bottom: 15px;
+		height: 100px;
+		width: 14vw;
+	}
+}
+
+@media screen and (max-width: 1919px) {
+	#creationLab {
+		width: 100%;
+		height: calc(100vh - 135px);
+		margin-top: 25vh;
+		bottom: 0;
+		position: fixed;
+	}
+
+	#menu {
+		width: 60px;
+		height: calc(100vh - 135px);
+		margin-left: 8px;
+		float: left;
+		border-right: solid 5px;
+		background-color: #ffe02f;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	#size {
+		float: left;
+		margin-left: 5px;
+		margin-top: 20px;
+		margin-bottom: 15px;
+		height: 100px;
+		width: 14vw;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 2px
+}
+
+/* #creationLab {
+	width: 100%;
+	height: calc(100vh - 135px);
+	margin-top: 25vh;
+	bottom: 0;
+	position: fixed;
+}
+
+#menu {
+	width: 50px;
+	height: calc(100vh - 135px);
+	margin-left: 8px;
+	float: left;
+	border-right: solid 5px;
+	background-color: #ffe02f;
+}
+
+#size {
+	float: left;
+	margin-left: 5px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	height: 100px;
+} */
+
+#MinH, #MinW {
+	text-align: center;
+	color: #bebebe;
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+	width: 13vw;
+	height: 40px;
+	border-radius: 2.5em;
+	background: #000;
+	margin-top: 5px;
+	font-size: 0.8em;
+}
+
+.tooling {
+	height: 60px;
+	width: 60px;
+}
+
+.toolingVisual {
+	height: 40px;
+	width: 40px;
+	margin-left: 9px;
+	margin-top: 10px;
+}
+
+.btn {
+	float: right;
+	margin-right: 3px;
+}
+
+#number, #number1 {
+  width: 88%;
+}
+
+input[type=range][orient=vertical] {
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 50px;
+}
+
+#line {
+	height: 40px;
+	width: 40px;
+	margin-top: 10px;
+}

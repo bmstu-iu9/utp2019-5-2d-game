@@ -1,0 +1,147 @@
+* {
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	background: url(../visual/search.jpg) no-repeat;
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#search {
+	margin-left: 5%;
+	background: blue;
+}
+
+#uname{
+	float: left;
+	margin-top: 30vh;
+	text-align: center;
+	font-weight: bold;
+	margin-left: 30vw;
+	width: 30em;
+}
+
+#but1 {
+	height: 3em;
+	margin: 0.5em;
+	margin-top: 0.25em;
+	border-radius: 2.5em;
+	text-align: center;
+	font-weight: bold;
+	width: 8.4em;
+	background: #ffe02f;
+}
+
+#unamet {
+	height: 3em;
+	border-radius: 2.5em;
+	text-align: center;
+	font-weight: bold;
+	width: 18em;
+	background: #000;
+}
+
+#size {
+	float: right;
+	margin-right: 20px;
+	margin-top: 15vh;
+}
+
+#MinH, #MinW {
+	text-align: center;
+	color: #bebebe;
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+	width: 20vw;
+	height: 40px;
+	border-radius: 2.5em;
+	background: #000;
+	margin-top: 5px;
+	font-size: 0.8em;
+}
+
+#number, #number1 {
+  width: 16vw;
+}
+
+#nom {
+	background: #444444;
+	border-radius: 1em;
+	padding-left: 3%;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+#usr {
+	margin-left: 2%;
+	font-weight: bold;
+	margin-top: 1%;
+}
+
+#tim {
+	margin-left: 2%;
+	font-weight: bold;
+}
+
+#vis {
+	margin-top: 2vw;
+	width: 30%;
+	height: 40vh;
+	margin-left: 2vw;
+}
+
+#des {
+	width: 50%;
+	height: 40vh;
+	padding-left: 1%;
+	padding-top: 1%;
+	margin-right: 10%;
+	margin-top: 3vw;
+	float: right;
+	background: #ACACAC;
+	border: 3px inset #ACACAC;
+}
+
+#result {
+	height: 60vh;
+	width: 90vw;
+	margin-top: 2vh;
+	margin-left: 5vw;
+	background: #fff;
+	border: #000 inset 5px;
+	overflow-y: scroll;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #ffe02f
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #000
+}
+
+::-webkit-scrollbar {
+	width: 8px
+}
+
+#answer {
+	height: 100%;
+	width: 100%;
+}
+
+#footer {
+	width: 75.4vw;
+	margin-left: 12.3vw;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	font-size: 0.8vw;
+	font-weight: 650;
+	background-color: #ffe02f;
+}

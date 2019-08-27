@@ -1,0 +1,61 @@
+* {
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	background: url(../visual/cabinet.jpg) no-repeat;
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#base {
+	width: 20vw;
+	margin-top: 50vh;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: auto;
+	padding-right: auto;
+}
+
+#view , #editor, #play, #uname {
+	height: 3em;
+	width: 20vw;
+	margin: 0.5em;
+	margin-top: 0.25em;
+	border-radius: 3em;
+	text-align: center;
+	font-weight: bold;
+	color: #2A2A2A;
+}
+
+#view , #editor {
+	background: #000;
+	color: #fff;
+}
+
+#uname {
+	background: #ffe02f;
+	color: #000;
+}
+
+#play {
+	background: #ffe02f;
+	color: #000;
+	width: 10vw;
+	margin-left: 5vw;
+}
+
+#footer {
+	width: 75.4vw;
+	margin-left: 12.3vw;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	font-size: 0.8vw;
+	font-weight: 650;
+	background: #ffe02f;
+}

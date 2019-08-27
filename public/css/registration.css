@@ -1,0 +1,54 @@
+* {
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	background: url(../visual/registration.jpg) no-repeat;
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#base {
+	width: 20vw;
+	margin-top: 28%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#Name, #Password, #Password1, #Login, #Check_in {
+	height: 4vh;
+	width: 20vw;
+	border-radius: 3em;
+	text-align: left;
+	font-weight: bold;
+	margin-top: 4px;
+}
+
+#Login, #Password, #Name, #Password1 {
+	letter-spacing: 0.2em;
+	text-indent: 5px;
+	background: #000;
+	color: #fff;
+}
+
+#Check_in {
+	text-align: center;
+	width: 8vw;
+	background: #ffe02f;
+	font-size: 1.9vh;
+}
+
+#footer {
+	width: 75.4vw;
+	margin-left: 12.3vw;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	font-size: 0.8vw;
+	font-weight: 650;
+	background-color: #ffe02f;
+}
