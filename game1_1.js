@@ -38,7 +38,13 @@ var Grid = function(x0,y0,x1,y1){
 };
 
 document.addEventListener("keydown",function(e){
-  console.log(move);
+  var i;
+  for(i in rect){
+    move.w = move.w && !playerinLine(rect[i], player.x, player.y - 5) && !playerINwall(rect[i],player.x, player.y - 5) && !playerinarc(rect[i], player.x, player.y - 5);
+    move.s =move.s && !playerinLine(rect[i], player.x, player.y + 5) && !playerINwall(rect[i],player.x, player.y + 5) && !playerinarc(rect[i], player.x, player.y + 5);
+    move.a =move.a && !playerinLine(rect[i], player.x - 5, player.y) && !playerINwall(rect[i],player.x - 5, player.y) && !playerinarc(rect[i], player.x - 5, player.y);
+    move.d = move.d && !playerinLine(rect[i], player.x + 5, player.y) && !playerINwall(rect[i],player.x + 5, player.y) && !playerinarc(rect[i], player.x + 5, player.y);
+  };
   var key=e.key;
   var i;
   if(key=="w" && move.w)
@@ -57,6 +63,10 @@ document.addEventListener("keydown",function(e){
   {
     player.x-=5;
   }
+    move.w = true;
+    move.s = true;
+    move.d = true;
+    move.a = true;
 });
 
 
@@ -99,20 +109,7 @@ document.getElementById("arc").onclick = function(){
   cursor.load=false;
 };
 
-document.getElementById("reset").onclick = function(){
-  ctx.clearRect(0,0,cvswidth,cvsheight);
-  rect = [];
-  count = [];
-  player.x=15;
-  player.y=15;
-  finish.x = cvswidth-215;
-  finish.y = cvsheight-15;
-  start = true;
-  fin = false;
-};
-
 document.getElementById("back").onclick = function(){
-  console.log(count);
 
   var a =rect[rect.length-1];
   var i,j;
@@ -165,10 +162,13 @@ var cursor = {
   confrim:false
 };
 
+
+
 var player = {
   x:12,
   y:12
 };
+
 
 
 var finish = {
@@ -176,9 +176,11 @@ var finish = {
   y:cvsheight-12
 };
 
+
+
 var rect = [];
 var i,j;
-var radius = 5;
+var radius = 3;
 var index=0;
 var start=true;
 var fin=false;
@@ -202,10 +204,23 @@ var player_in_start = function(){
 
 var playerinLine = function(r,x,y){
   if(r.type == 3 || r.type == 2){
-    return (Math.abs((r.y1-r.y0)*x - (r.x1-r.x0) * y + (r.x1 * r.y0) - (r.y1 * r.x0))/(Math.sqrt(( Math.pow(r.y1 - r.y0,2)) + (Math.pow((r.x1 - r.x0),2)))))<=5;
+   return  (Math.abs((r.y1-r.y0)*x - (r.x1-r.x0) * y + (r.x1 * r.y0) - (r.y1 * r.x0))/(Math.sqrt(( Math.pow(r.y1 - r.y0,2)) + (Math.pow((r.x1 - r.x0),2)))))<=5 && playerXline(r) && playerYline(r);
   };
 };
 
+var playerinarc = function(r,x,y){
+  if(r.type == 1 || r.type == 5){
+    return Math.sqrt(Math.pow(x-r.x0,2) + Math.pow(y-r.y0,2))<(5 + r.R);
+  };
+};
+
+var playerXline = function(r){
+  return  ( ( player.x >= r.x0 && player.x <= r.x1 ) || ( player.x <= r.x0 && player.x >= r.x1 ) );
+};
+
+var playerYline = function(r){
+  return ((player.y <= r.y0 && player.y >= r.y1 ) || (player.y >= r.y0 && player.y <= r.y1 ) );
+}
 
 var playerINwall = function (r,x,y) {
   if(r.type==4){
@@ -300,14 +315,15 @@ setInterval(function(){
   var st = player.y - 10;
   var back = player.y + 10;
 
+  if(Math.sqrt(Math.pow(player.x-finish.x,2) + Math.pow(player.y-finish.y,2))<=10){
+    alert("YOU WIN");
+    document.location.reload(true);
+  };
 
 
   for(i in rect){
 
-      move.w = !playerinLine(rect[i], player.x, player.y - 10) && !playerINwall(rect[i],player.x, player.y - 10);
-      move.s = !playerinLine(rect[i], player.x, player.y + 10) && !playerINwall(rect[i],player.x, player.y + 10);
-      move.a = !playerinLine(rect[i], player.x - 10, player.y) && !playerINwall(rect[i],player.x - 10, player.y);
-      move.d = !playerinLine(rect[i], player.x + 10, player.y) && !playerINwall(rect[i],player.x + 10, player.y);
+
 
 
       if(rect[i]==0){continue;};
@@ -393,7 +409,7 @@ setInterval(function(){
         //draw_buttons();
       };
     };
-},1);
+},0.1);
 
 
 
@@ -419,9 +435,9 @@ var P = function(x0,y0,x1,y1){
 
 window.onmousemove = function(e){
 
-  mouse.x = e.clientX-5;
+  mouse.x = e.pageX-5;
 
-  mouse.y = e.clientY-5;
+  mouse.y = e.pageY-5;
 
   if(mouse.click){
 
