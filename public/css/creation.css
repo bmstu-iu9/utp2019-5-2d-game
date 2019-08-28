@@ -29,13 +29,19 @@ html {
 	padding-top: 2%;
 	padding-left: 2%;
 	padding-right: 2%;
-	width: 13vw;
-	height: 40px;
+	width: 15vw;
+	height: 35px;
 	border-radius: 2.5em;
 	background: #000;
-	margin-top: 5px;
-	font-size: 0.8em;
+	font-size: 0.6em;
+	margin-left: calc(1vw - 9px);
 }
+
+#MinW {
+	margin-top: 35px;
+	margin-bottom: 5px;
+}
+
 
 #nameLab {
 	background: url(../visual/creation.jpg);
