@@ -7,106 +7,21 @@
 html {
 	height: 100%;
 	width: 100%;
-	background: url(../visual/creation.jpg) no-repeat;
+	/* background: url(../visual/creation.jpg) no-repeat;
 	background-size: cover;
-	background-position: left top;
+	background-position: left top; */
+	background: white;
 	font-family: 'Montserrat', sans-serif;
-}
-
-#base, #cvs {
-	width: calc(100vw - 73px);
-	height: calc(100vh - 135px);
-	float: left;
-}
-
-@media screen and (min-width: 1920px) {
-	#creationLab {
-		width: 100%;
-		height: calc(100vh - 202px);
-		margin-top: 25vh;
-		bottom: 0;
-		position: fixed;
-	}
-
-	#menu {
-		width: 60px;
-		height: calc(100vh - 202px);
-		margin-left: 8px;
-		float: left;
-		border-right: solid 5px;
-		background-color: #ffe02f;
-		overflow-y: auto;
-		overflow-x: hidden;
-	}
-
-	#size {
-		float: left;
-		margin-left: 5px;
-		margin-top: 60px;
-		margin-bottom: 15px;
-		height: 100px;
-		width: 14vw;
-	}
-}
-
-@media screen and (max-width: 1919px) {
-	#creationLab {
-		width: 100%;
-		height: calc(100vh - 135px);
-		margin-top: 25vh;
-		bottom: 0;
-		position: fixed;
-	}
-
-	#menu {
-		width: 60px;
-		height: calc(100vh - 135px);
-		margin-left: 8px;
-		float: left;
-		border-right: solid 5px;
-		background-color: #ffe02f;
-		overflow-y: auto;
-		overflow-x: hidden;
-	}
-
-	#size {
-		float: left;
-		margin-left: 5px;
-		margin-top: 20px;
-		margin-bottom: 15px;
-		height: 100px;
-		width: 14vw;
-	}
-}
-
-::-webkit-scrollbar {
-	width: 2px
-}
-
-/* #creationLab {
-	width: 100%;
-	height: calc(100vh - 135px);
-	margin-top: 25vh;
-	bottom: 0;
-	position: fixed;
-}
-
-#menu {
-	width: 50px;
-	height: calc(100vh - 135px);
-	margin-left: 8px;
-	float: left;
-	border-right: solid 5px;
-	background-color: #ffe02f;
 }
 
 #size {
 	float: left;
-	margin-left: 5px;
-	margin-top: 20px;
-	margin-bottom: 15px;
-	height: 100px;
-} */
+	width: calc(17vw - 6px);
+	height: 123px;
+	border-top: solid 6px;
+	border-bottom: solid 6px;
+	border-left: solid 6px;
+}
 
 #MinH, #MinW {
 	text-align: center;
@@ -122,6 +37,43 @@ html {
 	font-size: 0.8em;
 }
 
+#nameLab {
+	background: url(../visual/creation.jpg);
+	background-size: cover;
+	float: right;
+	height: 135px;
+	width: 83vw;
+}
+
+#creationLab {
+	width: 100%;
+	height: calc(100vh - 135px);
+	margin-top: 25vh;
+	bottom: 0;
+	position: fixed;
+}
+
+#menu {
+	width: 60px;
+	height: calc(100vh - 135px);
+	float: left;
+	border-right: solid 6px;
+	background-color: #ffe02f;
+	border-left: solid 6px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#base, #cvs {
+	width: calc(100vw - 72px);
+	height: calc(100vh - 135px);
+	float: left;
+}
+
+::-webkit-scrollbar {
+	width: 2px
+}
+
 .tooling {
 	height: 60px;
 	width: 60px;
@@ -130,28 +82,23 @@ html {
 .toolingVisual {
 	height: 40px;
 	width: 40px;
-	margin-left: 9px;
+	margin-left: 10px;
 	margin-top: 10px;
-}
-
-.btn {
-	float: right;
-	margin-right: 3px;
 }
 
 #number, #number1 {
   width: 88%;
 }
 
-input[type=range][orient=vertical] {
-    writing-mode: bt-lr; /* IE */
-    -webkit-appearance: slider-vertical; /* WebKit */
-    width: 8px;
-    height: 50px;
+#number2 {
+	writing-mode: bt-lr; /* IE */
+	-webkit-appearance: slider-vertical; /* WebKit */
+	width: 8px;
+	height: 50px;
+	margin-top: 3px;
 }
 
 #line {
 	height: 40px;
 	width: 40px;
-	margin-top: 10px;
 }
