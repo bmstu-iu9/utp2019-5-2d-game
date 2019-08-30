@@ -14,8 +14,7 @@ document.getElementById("color").oninput= function(){
   Mycolor = this.value
 };
 
-var res = (screen.width/screen.height);
-res=res/1.777777777777;
+var res = (screen.width/1920);
 
 var Wall = function(x0,y0,x1,y1,R,color,type){
   this.x0 = x0,
