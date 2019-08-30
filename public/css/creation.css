@@ -13,7 +13,7 @@ html {
 
 #size {
 	float: left;
-	width: calc(17vw - 6px);
+	width: calc(100vw - 1006px);
 	height: 123px;
 	border-top: solid 6px;
 	border-bottom: solid 6px;
@@ -26,12 +26,12 @@ html {
 	padding-top: 2%;
 	padding-left: 2%;
 	padding-right: 2%;
-	width: 15vw;
+	width: 16vw;
 	height: 35px;
 	border-radius: 2.5em;
 	background: #000;
 	font-size: 0.6em;
-	margin-left: calc(1vw - 9px);
+	margin-left: calc(50vw - 503px - 8vw);
 }
 
 #MinW {
@@ -44,7 +44,7 @@ html {
 	background-size: cover;
 	float: right;
 	height: 135px;
-	width: 83vw;
+	width: 1000px;
 }
 
 #creationLab {
