@@ -1,11 +1,11 @@
-
 var create = function(level) {
 	var newMap = document.createElement("div")
 		, nameOfMap = document.createElement("p")
 		, userName = document.createElement("p")
 		, dataAndTime = document.createElement("p")
 		, description = document.createElement("p")
-		, image = document.createElement("img");
+		, image = document.createElement("img")
+		, button = document.createElement("button");
 
 	nameOfMap.appendChild(document.createTextNode(level.name));
 	userName.appendChild(document.createTextNode(level.author));
@@ -13,22 +13,25 @@ var create = function(level) {
 	description.appendChild(document.createTextNode(level.description));
 	image.setAttribute('src', level.image);
 
-	newMap.setAttribute("id", "answer");
-	image.setAttribute('id', "vis");
-	nameOfMap.setAttribute('id', "nom");
-	userName.setAttribute('id', "usr");
-	dataAndTime.setAttribute('id', "tim");
-	description.setAttribute('id', "des");
+	newMap.setAttribute('class', "answer");
+	image.setAttribute('class', "vis");
+	nameOfMap.setAttribute('class', "nom");
+	userName.setAttribute('class', "usr");
+	dataAndTime.setAttribute('class', "tim");
+	description.setAttribute('class', "des");
+	button.setAttribute('class', "choosen");
 
 	newMap.appendChild(nameOfMap);
 	newMap.appendChild(userName);
 	newMap.appendChild(description);
 	newMap.appendChild(dataAndTime);
 	newMap.appendChild(image);
+	newMap.appendChild(button);
 
 
 	return newMap;
 }
+
 
 
 //Example of level info
