@@ -19,8 +19,8 @@ var create = function(level) {
 	userName.setAttribute('class', "usr");
 	dataAndTime.setAttribute('class', "tim");
 	description.setAttribute('class', "des");
-	button.setAttribute('class', "choosen");
-	button.setAttribute('value', "choosen");
+	button.setAttribute('class', "chosen");
+	button.setAttribute('value', "Chosen");
 
 	newMap.appendChild(nameOfMap);
 	newMap.appendChild(userName);
