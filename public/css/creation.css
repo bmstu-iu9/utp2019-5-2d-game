@@ -7,9 +7,6 @@
 html {
 	height: 100%;
 	width: 100%;
-	/* background: url(../visual/creation.jpg) no-repeat;
-	background-size: cover;
-	background-position: left top; */
 	background: white;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -42,7 +39,6 @@ html {
 	margin-bottom: 5px;
 }
 
-
 #nameLab {
 	background: url(../visual/creation.jpg);
 	background-size: cover;
@@ -54,7 +50,6 @@ html {
 #creationLab {
 	width: 100%;
 	height: calc(100vh - 135px);
-	margin-top: 25vh;
 	bottom: 0;
 	position: fixed;
 }
