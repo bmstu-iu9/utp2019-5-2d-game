@@ -40,7 +40,6 @@ var Grid = function(x0,y0,x1,y1){
   this.y1 = y1
 };
 
-//var fs = require('fs');
 
 
 document.addEventListener("keydown",function(e){
@@ -131,7 +130,7 @@ if(rect.length){
   };
 };
 
-/*document.getElementById("save").onclick = function(){
+document.getElementById("save").onclick = function(){
 
   var save = {
     json_rect:rect,
@@ -141,11 +140,8 @@ if(rect.length){
 
   var json = JSON.stringify(save);
 
-  fs.writeFile('A:/js/save_maps/test.json',json,'utf8',(err) => {
-    if (err) throw err;
-    console.log('The file has been saved!');
-  });
-};*/
+  //FetchReq
+};
 
 var c = 0;//для сеточки жирной и не очень(5:55 утра,помогите)
 
