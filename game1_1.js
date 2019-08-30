@@ -190,15 +190,15 @@ var cursor = {
 
 
 var player = {
-  x:12,
-  y:12
+  x:12*res,
+  y:12*res
 };
 
 
 
 var finish = {
-  x:cvswidth-12,
-  y:cvsheight-12
+  x:cvswidth-12*res,
+  y:cvsheight-12*res
 };
 
 
@@ -261,7 +261,7 @@ setInterval(function(){
   ctx.fillStyle="blue";
   ctx.strokeStyle="red";
   ctx.beginPath();
-  ctx.arc(player.x,player.y,5,0,2 * PI,true);
+  ctx.arc(player.x,player.y,5*res,0,2 * PI,true);
   ctx.fill();
   if(cursorinplayer()){ctx.stroke();};
   ctx.closePath();
@@ -275,7 +275,7 @@ setInterval(function(){
   ctx.fillStyle="orange";
   ctx.strokeStyle = "black";
   ctx.beginPath();
-  ctx.arc(finish.x,finish.y,5,0,2 * PI,true);
+  ctx.arc(finish.x,finish.y,5*res,0,2 * PI,true);
   ctx.fill();
   if(cursorinfinish()){ctx.stroke();};
   ctx.closePath();
