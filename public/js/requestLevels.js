@@ -13,15 +13,16 @@ var create = function(level) {
     description.appendChild(document.createTextNode(level.description));
     image.setAttribute('src', level.image);
 
+    button.setAttribute('class', "chosen");
+    button.setAttribute('value', "Chosen");
+    button.setAttribute('type', "button");
+
     newMap.setAttribute('class', "answer");
     image.setAttribute('class', "vis");
     nameOfMap.setAttribute('class', "nom");
     userName.setAttribute('class', "usr");
     dataAndTime.setAttribute('class', "tim");
     description.setAttribute('class', "des");
-    button.setAttribute('class', "chosen");
-    button.setAttribute('value', "Chosen");
-    button.setAttribute('type', "button");
 
     newMap.appendChild(nameOfMap);
     newMap.appendChild(userName);
