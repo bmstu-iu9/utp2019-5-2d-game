@@ -20,6 +20,7 @@ var create = function(level) {
 	dataAndTime.setAttribute('class', "tim");
 	description.setAttribute('class', "des");
 	button.setAttribute('class', "choosen");
+	button.setAttribute('value', "choosen");
 
 	newMap.appendChild(nameOfMap);
 	newMap.appendChild(userName);
