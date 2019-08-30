@@ -12,11 +12,6 @@ html {
 	font-family: 'Montserrat', sans-serif;
 }
 
-#search {
-	margin-left: 5%;
-	background: blue;
-}
-
 #uname{
 	float: left;
 	margin-top: 30vh;
@@ -70,44 +65,6 @@ html {
   width: 16vw;
 }
 
-#nom {
-	background: #444444;
-	border-radius: 1em;
-	padding-left: 3%;
-	font-size: 120%;
-	font-weight: bold;
-}
-
-#usr {
-	margin-left: 2%;
-	font-weight: bold;
-	margin-top: 1%;
-}
-
-#tim {
-	margin-left: 2%;
-	font-weight: bold;
-}
-
-#vis {
-	margin-top: 2vw;
-	width: 30%;
-	height: 40vh;
-	margin-left: 2vw;
-}
-
-#des {
-	width: 50%;
-	height: 40vh;
-	padding-left: 1%;
-	padding-top: 1%;
-	margin-right: 10%;
-	margin-top: 3vw;
-	float: right;
-	background: #ACACAC;
-	border: 3px inset #ACACAC;
-}
-
 #result {
 	height: 60vh;
 	width: 90vw;
@@ -116,6 +73,67 @@ html {
 	background: #fff;
 	border: #000 inset 5px;
 	overflow-y: scroll;
+}
+
+.answer { /*сам блок*/
+	height: 100%;
+	width: 100%;
+}
+
+.nom { /*название лабиринта*/
+	background: #444444;
+	border-radius: 10px;
+	padding-left: 3%;
+	font-size: 120%;
+	font-weight: bold;
+	height: 20px;
+}
+
+.chosen { /*кнопка, чтоб начать прохождение*/
+	width: 8.4em;
+	height: 3em;
+	float: right;
+	background-color: #bababa;
+	color: #000;
+	border-radius: 2.5em;
+	text-align: center;
+	font-weight: bold;
+	border: #ACACAC outset 2px;
+	margin-left: 90%;
+	margin-right: 3%;
+}
+
+.usr { /*имя автора*/
+	margin-left: 2%;
+	font-weight: bold;
+	margin-top: 1%;
+	width: 30%;
+}
+
+.tim { /*время создания*/
+	margin-left: 2%;
+	font-weight: bold;
+	width: 30%;
+}
+
+.vis { /*лабиринт*/
+	margin-top: 1vw;
+	width: 30%;
+	height: 40vh;
+	margin-left: 2vw;
+	float: left;
+}
+
+.des { /*описание*/
+	width: 50%;
+	height: 38vh;
+	padding-left: 1%;
+	padding-top: 1%;
+	float: right;
+	margin-right: 3vw;
+	background: #ACACAC;
+	border: 3px inset #ACACAC;
+	margin-top: 2vh;
 }
 
 ::-webkit-scrollbar-track {
@@ -128,11 +146,6 @@ html {
 
 ::-webkit-scrollbar {
 	width: 8px
-}
-
-#answer {
-	height: 100%;
-	width: 100%;
 }
 
 #footer {
