@@ -1,36 +1,37 @@
 var create = function(level) {
-	var newMap = document.createElement("div")
-		, nameOfMap = document.createElement("p")
-		, userName = document.createElement("p")
-		, dataAndTime = document.createElement("p")
-		, description = document.createElement("p")
-		, image = document.createElement("img")
-		, button = document.createElement("button");
+    var newMap = document.createElement("div")
+        , nameOfMap = document.createElement("p")
+        , userName = document.createElement("p")
+        , dataAndTime = document.createElement("p")
+        , description = document.createElement("p")
+        , image = document.createElement("img")
+        , button = document.createElement("input");
 
-	nameOfMap.appendChild(document.createTextNode(level.name));
-	userName.appendChild(document.createTextNode(level.author));
-	dataAndTime.appendChild(document.createTextNode(level.date));
-	description.appendChild(document.createTextNode(level.description));
-	image.setAttribute('src', level.image);
+    nameOfMap.appendChild(document.createTextNode(level.name));
+    userName.appendChild(document.createTextNode(level.author));
+    dataAndTime.appendChild(document.createTextNode(level.date));
+    description.appendChild(document.createTextNode(level.description));
+    image.setAttribute('src', level.image);
 
-	newMap.setAttribute('class', "answer");
-	image.setAttribute('class', "vis");
-	nameOfMap.setAttribute('class', "nom");
-	userName.setAttribute('class', "usr");
-	dataAndTime.setAttribute('class', "tim");
-	description.setAttribute('class', "des");
-	button.setAttribute('class', "chosen");
-	button.setAttribute('value', "Chosen");
+    newMap.setAttribute('class', "answer");
+    image.setAttribute('class', "vis");
+    nameOfMap.setAttribute('class', "nom");
+    userName.setAttribute('class', "usr");
+    dataAndTime.setAttribute('class', "tim");
+    description.setAttribute('class', "des");
+    button.setAttribute('class', "chosen");
+    button.setAttribute('value', "Chosen");
+    button.setAttribute('type', "button");
 
-	newMap.appendChild(nameOfMap);
-	newMap.appendChild(userName);
-	newMap.appendChild(description);
-	newMap.appendChild(dataAndTime);
-	newMap.appendChild(image);
-	newMap.appendChild(button);
+    newMap.appendChild(nameOfMap);
+    newMap.appendChild(userName);
+    newMap.appendChild(description);
+    newMap.appendChild(dataAndTime);
+    newMap.appendChild(image);
+    newMap.appendChild(button);
 
 
-	return newMap;
+    return newMap;
 }
 
 
