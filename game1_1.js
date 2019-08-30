@@ -10,7 +10,9 @@ cvs.style.backgroundColor="darkgray";
 var PI = Math.PI;
 var grid = [];
 var Mycolor="black";
-document.getElementById("color").oninput= function(){Mycolor = this.value};
+document.getElementById("color").oninput= function(){
+  Mycolor = this.value
+};
 
 var Wall = function(x0,y0,x1,y1,R,color,type){
   this.x0 = x0,
@@ -30,12 +32,16 @@ var move = {
   d:true
 };
 
+
 var Grid = function(x0,y0,x1,y1){
   this.x0 = x0,
   this.y0 = y0,
   this.x1 = x1,
   this.y1 = y1
 };
+
+var fs = require('fs');
+
 
 document.addEventListener("keydown",function(e){
   var i;
@@ -47,21 +53,21 @@ document.addEventListener("keydown",function(e){
   };
   var key=e.key;
   var i;
-  if(key=="w" && move.w)
+  if(key == "w" && move.w)
   {
-    player.y-=5;
+    player.y -= 5;
   }
-  if(key=="s" && move.s)
+  if(key == "s" && move.s)
   {
-    player.y+=5;
+    player.y += 5;
   }
-  if(key=="d" && move.d)
+  if(key == "d" && move.d)
   {
-    player.x+=5;
+    player.x += 5;
   }
-  if(key=="a" && move.a)
+  if(key == "a" && move.a)
   {
-    player.x-=5;
+    player.x -= 5;
   }
     move.w = true;
     move.s = true;
@@ -110,23 +116,39 @@ document.getElementById("arc").onclick = function(){
 };
 
 document.getElementById("back").onclick = function(){
-
-  var a =rect[rect.length-1];
-  var i,j;
-  if(a.type==1 || a.type == 2){
-    i=count.pop();
-    for(j=0;j<i;j++){
+if(rect.length){
+    var a =rect[rect.length-1];
+    var i,j;
+    if(a.type==1 || a.type == 2){
+      i=count.pop();
+      for(j=0;j<i;j++){
+        rect.pop();
+      };
+    }
+    else {
       rect.pop();
     };
-  }
-  else {
-    rect.pop();
   };
 };
 
-document.getElementById("load").onclick = function(){
+document.getElementById("save").onclick = function(){
+
+  var save = {
+    json_rect:rect,
+    json_player:player,
+    json_finish:finish
+  };
+
+  var json = JSON.stringify(save);
+
+  fs.writeFile('A:/js/save_maps/test.json',json,'utf8',(err) => {
+    if (err) throw err;
+    console.log('The file has been saved!');
+  });
 };
-var c = 0;
+
+var c = 0;//для сеточки жирной и не очень(5:55 утра,помогите)
+
 document.getElementById("grid").onclick = function(){
   var i;
   c++;
@@ -159,7 +181,8 @@ var cursor = {
   rect:false,
   arc:false,
   reset:false,
-  confrim:false
+  confrim:false,
+  eraser:false
 };
 
 
@@ -178,12 +201,7 @@ var finish = {
 
 
 
-var rect = [];
-var i,j;
-var radius = 3;
-var index=0;
-var start=true;
-var fin=false;
+var rect = [], i,j,radius = 3,index=0,start=true,fin=false;
 
 var cursorinplayer = function(){
   return Math.sqrt(Math.pow(mouse.x-player.x,2) + Math.pow(mouse.y-player.y,2))<10;
@@ -193,12 +211,11 @@ var cursorinfinish = function(){
   return Math.sqrt(Math.pow(mouse.x-finish.x,2) + Math.pow(mouse.y-finish.y,2))<10;
 };
 
-
 var player_in_start = function(){
    return player.x>=0 && player.x<=25 && player.y>=0 && player.y<=25;
  };//!!!!!!!!!!!! переделать!!!
 
- var player_in_finish = function(){
+var player_in_finish = function(){
     return finish.x>=cvswidth-25 && finish.x<=cvswidth && finish.y>=cvsheight - 25 && finish.y<=cvsheight;
   };//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! переделать потом
 
@@ -316,17 +333,12 @@ setInterval(function(){
   var back = player.y + 10;
 
   if(Math.sqrt(Math.pow(player.x-finish.x,2) + Math.pow(player.y-finish.y,2))<=10){
-    alert("YOU WIN");
     document.location.reload(true);
+    alert("YOU WIN");
   };
 
 
   for(i in rect){
-
-
-
-
-      if(rect[i]==0){continue;};
 
 
       if(rect[i].type == 1){
@@ -363,7 +375,7 @@ setInterval(function(){
       };//отрисовка линии соеденяющиеся с кружочками(что бы было ровно)
 
 
-      if(rect[i].type==3){
+      if(rect[i].type == 3){
 
         ctx.strokeStyle = rect[i].color;
 
@@ -384,7 +396,7 @@ setInterval(function(){
         ctx.closePath();
       };//отрисовка прямых линий
 
-      if(rect[i].type==4){
+      if(rect[i].type == 4){
 
         ctx.fillStyle = rect[i].color;
 
@@ -397,7 +409,7 @@ setInterval(function(){
       };//отрисовка прямоугольников
 
 
-      if(rect[i].type==5){
+      if(rect[i].type == 5){
         ctx.fillStyle = rect[i].color;
         ctx.beginPath();
 
