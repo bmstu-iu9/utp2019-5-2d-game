@@ -1,8 +1,8 @@
 "use strict"
 var cvs=document.getElementById('cvs');
 var ctx=cvs.getContext("2d");
-var cvswidth=1000;
-var cvsheight=500;
+var cvswidth=window.innerWidth - 72 ;
+var cvsheight=window.innerHeight - 135;
 cvs.width=cvswidth;
 cvs.height=cvsheight;
 cvs.style.backgroundColor="darkgray";
@@ -13,6 +13,9 @@ var Mycolor="black";
 document.getElementById("color").oninput= function(){
   Mycolor = this.value
 };
+
+var res = (screen.width/screen.height);
+res=res/1.777777777777;
 
 var Wall = function(x0,y0,x1,y1,R,color,type){
   this.x0 = x0,
@@ -40,7 +43,7 @@ var Grid = function(x0,y0,x1,y1){
   this.y1 = y1
 };
 
-var fs = require('fs');
+//var fs = require('fs');
 
 
 document.addEventListener("keydown",function(e){
@@ -131,7 +134,7 @@ if(rect.length){
   };
 };
 
-document.getElementById("save").onclick = function(){
+/*document.getElementById("save").onclick = function(){
 
   var save = {
     json_rect:rect,
@@ -145,7 +148,7 @@ document.getElementById("save").onclick = function(){
     if (err) throw err;
     console.log('The file has been saved!');
   });
-};
+};*/
 
 var c = 0;//для сеточки жирной и не очень(5:55 утра,помогите)
 
@@ -264,7 +267,7 @@ setInterval(function(){
   if(cursorinplayer()){ctx.stroke();};
   ctx.closePath();
   ctx.strokeStyle="green";
-  if(player_in_start() && start){ctx.strokeRect(0,0,25,25);};
+  if(player_in_start() && start){ctx.strokeRect(0,0,res*25,res*25);};
 
 
 
@@ -278,7 +281,7 @@ setInterval(function(){
   if(cursorinfinish()){ctx.stroke();};
   ctx.closePath();
   ctx.strokeStyle = "green";
-  if(player_in_finish()){ctx.strokeRect(cvswidth-25,cvsheight - 25,25,25);};
+  if(player_in_finish()){ctx.strokeRect(cvswidth-(res*25),cvsheight - (res*25),res*25,res*25);};
 
 
 // if(mouse.x==550){mouse.x=550}    // ????????????????????????
@@ -445,11 +448,12 @@ var P = function(x0,y0,x1,y1){
 };
 
 
-window.onmousemove = function(e){
+cvs.onmousemove = function(e){
+console.log(mouse.x,mouse.y);
 
-  mouse.x = e.pageX-5;
+  mouse.x = e.clientX - 78;
 
-  mouse.y = e.pageY-5;
+  mouse.y = e.clientY- 140;
 
   if(mouse.click){
 
