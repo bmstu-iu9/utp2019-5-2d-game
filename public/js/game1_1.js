@@ -1,8 +1,8 @@
 "use strict"
 var cvs=document.getElementById('cvs');
 var ctx=cvs.getContext("2d");
-var cvswidth=1000;
-var cvsheight=500;
+var cvswidth=window.innerWidth - 72 ;
+var cvsheight=window.innerHeight - 135;
 cvs.width=cvswidth;
 cvs.height=cvsheight;
 cvs.style.backgroundColor="darkgray";
@@ -10,7 +10,9 @@ cvs.style.backgroundColor="darkgray";
 var PI = Math.PI;
 var grid = [];
 var Mycolor="black";
-document.getElementById("color").oninput= function(){Mycolor = this.value};
+document.getElementById("color").oninput= function(){
+  Mycolor = this.value
+};
 
 var Wall = function(x0,y0,x1,y1,R,color,type){
   this.x0 = x0,
@@ -30,6 +32,7 @@ var move = {
   d:true
 };
 
+
 var Grid = function(x0,y0,x1,y1){
   this.x0 = x0,
   this.y0 = y0,
@@ -37,26 +40,39 @@ var Grid = function(x0,y0,x1,y1){
   this.y1 = y1
 };
 
+//var fs = require('fs');
+
+
 document.addEventListener("keydown",function(e){
-  console.log(move);
+  var i;
+  for(i in rect){
+    move.w = move.w && !playerinLine(rect[i], player.x, player.y - 5) && !playerINwall(rect[i],player.x, player.y - 5) && !playerinarc(rect[i], player.x, player.y - 5);
+    move.s =move.s && !playerinLine(rect[i], player.x, player.y + 5) && !playerINwall(rect[i],player.x, player.y + 5) && !playerinarc(rect[i], player.x, player.y + 5);
+    move.a =move.a && !playerinLine(rect[i], player.x - 5, player.y) && !playerINwall(rect[i],player.x - 5, player.y) && !playerinarc(rect[i], player.x - 5, player.y);
+    move.d = move.d && !playerinLine(rect[i], player.x + 5, player.y) && !playerINwall(rect[i],player.x + 5, player.y) && !playerinarc(rect[i], player.x + 5, player.y);
+  };
   var key=e.key;
   var i;
-  if(key=="w" && move.w)
+  if(key == "w" && move.w)
   {
-    player.y-=5;
+    player.y -= 5;
   }
-  if(key=="s" && move.s)
+  if(key == "s" && move.s)
   {
-    player.y+=5;
+    player.y += 5;
   }
-  if(key=="d" && move.d)
+  if(key == "d" && move.d)
   {
-    player.x+=5;
+    player.x += 5;
   }
-  if(key=="a" && move.a)
+  if(key == "a" && move.a)
   {
-    player.x-=5;
+    player.x -= 5;
   }
+    move.w = true;
+    move.s = true;
+    move.d = true;
+    move.a = true;
 });
 
 
@@ -99,37 +115,40 @@ document.getElementById("arc").onclick = function(){
   cursor.load=false;
 };
 
-document.getElementById("reset").onclick = function(){
-  ctx.clearRect(0,0,cvswidth,cvsheight);
-  rect = [];
-  count = [];
-  player.x=15;
-  player.y=15;
-  finish.x = cvswidth-215;
-  finish.y = cvsheight-15;
-  start = true;
-  fin = false;
-};
-
 document.getElementById("back").onclick = function(){
-  console.log(count);
-
-  var a =rect[rect.length-1];
-  var i,j;
-  if(a.type==1 || a.type == 2){
-    i=count.pop();
-    for(j=0;j<i;j++){
+if(rect.length){
+    var a =rect[rect.length-1];
+    var i,j;
+    if(a.type==1 || a.type == 2){
+      i=count.pop();
+      for(j=0;j<i;j++){
+        rect.pop();
+      };
+    }
+    else {
       rect.pop();
     };
-  }
-  else {
-    rect.pop();
   };
 };
 
-document.getElementById("load").onclick = function(){
-};
-var c = 0;
+/*document.getElementById("save").onclick = function(){
+
+  var save = {
+    json_rect:rect,
+    json_player:player,
+    json_finish:finish
+  };
+
+  var json = JSON.stringify(save);
+
+  fs.writeFile('A:/js/save_maps/test.json',json,'utf8',(err) => {
+    if (err) throw err;
+    console.log('The file has been saved!');
+  });
+};*/
+
+var c = 0;//для сеточки жирной и не очень(5:55 утра,помогите)
+
 document.getElementById("grid").onclick = function(){
   var i;
   c++;
@@ -162,8 +181,11 @@ var cursor = {
   rect:false,
   arc:false,
   reset:false,
-  confrim:false
+  confrim:false,
+  eraser:false
 };
+
+
 
 var player = {
   x:12,
@@ -171,17 +193,15 @@ var player = {
 };
 
 
+
 var finish = {
   x:cvswidth-12,
   y:cvsheight-12
 };
 
-var rect = [];
-var i,j;
-var radius = 5;
-var index=0;
-var start=true;
-var fin=false;
+
+
+var rect = [], i,j,radius = 3,index=0,start=true,fin=false;
 
 var cursorinplayer = function(){
   return Math.sqrt(Math.pow(mouse.x-player.x,2) + Math.pow(mouse.y-player.y,2))<10;
@@ -191,21 +211,33 @@ var cursorinfinish = function(){
   return Math.sqrt(Math.pow(mouse.x-finish.x,2) + Math.pow(mouse.y-finish.y,2))<10;
 };
 
-
 var player_in_start = function(){
    return player.x>=0 && player.x<=25 && player.y>=0 && player.y<=25;
  };//!!!!!!!!!!!! переделать!!!
 
- var player_in_finish = function(){
+var player_in_finish = function(){
     return finish.x>=cvswidth-25 && finish.x<=cvswidth && finish.y>=cvsheight - 25 && finish.y<=cvsheight;
   };//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! переделать потом
 
 var playerinLine = function(r,x,y){
   if(r.type == 3 || r.type == 2){
-    return (Math.abs((r.y1-r.y0)*x - (r.x1-r.x0) * y + (r.x1 * r.y0) - (r.y1 * r.x0))/(Math.sqrt(( Math.pow(r.y1 - r.y0,2)) + (Math.pow((r.x1 - r.x0),2)))))<=5;
+   return  (Math.abs((r.y1-r.y0)*x - (r.x1-r.x0) * y + (r.x1 * r.y0) - (r.y1 * r.x0))/(Math.sqrt(( Math.pow(r.y1 - r.y0,2)) + (Math.pow((r.x1 - r.x0),2)))))<=5 && playerXline(r) && playerYline(r);
   };
 };
 
+var playerinarc = function(r,x,y){
+  if(r.type == 1 || r.type == 5){
+    return Math.sqrt(Math.pow(x-r.x0,2) + Math.pow(y-r.y0,2))<(5 + r.R);
+  };
+};
+
+var playerXline = function(r){
+  return  ( ( player.x >= r.x0 && player.x <= r.x1 ) || ( player.x <= r.x0 && player.x >= r.x1 ) );
+};
+
+var playerYline = function(r){
+  return ((player.y <= r.y0 && player.y >= r.y1 ) || (player.y >= r.y0 && player.y <= r.y1 ) );
+}
 
 var playerINwall = function (r,x,y) {
   if(r.type==4){
@@ -300,17 +332,13 @@ setInterval(function(){
   var st = player.y - 10;
   var back = player.y + 10;
 
+  if(Math.sqrt(Math.pow(player.x-finish.x,2) + Math.pow(player.y-finish.y,2))<=10){
+    document.location.reload(true);
+    alert("YOU WIN");
+  };
 
 
   for(i in rect){
-
-      move.w = !playerinLine(rect[i], player.x, player.y - 10) && !playerINwall(rect[i],player.x, player.y - 10);
-      move.s = !playerinLine(rect[i], player.x, player.y + 10) && !playerINwall(rect[i],player.x, player.y + 10);
-      move.a = !playerinLine(rect[i], player.x - 10, player.y) && !playerINwall(rect[i],player.x - 10, player.y);
-      move.d = !playerinLine(rect[i], player.x + 10, player.y) && !playerINwall(rect[i],player.x + 10, player.y);
-
-
-      if(rect[i]==0){continue;};
 
 
       if(rect[i].type == 1){
@@ -347,7 +375,7 @@ setInterval(function(){
       };//отрисовка линии соеденяющиеся с кружочками(что бы было ровно)
 
 
-      if(rect[i].type==3){
+      if(rect[i].type == 3){
 
         ctx.strokeStyle = rect[i].color;
 
@@ -368,7 +396,7 @@ setInterval(function(){
         ctx.closePath();
       };//отрисовка прямых линий
 
-      if(rect[i].type==4){
+      if(rect[i].type == 4){
 
         ctx.fillStyle = rect[i].color;
 
@@ -381,7 +409,7 @@ setInterval(function(){
       };//отрисовка прямоугольников
 
 
-      if(rect[i].type==5){
+      if(rect[i].type == 5){
         ctx.fillStyle = rect[i].color;
         ctx.beginPath();
 
@@ -393,7 +421,7 @@ setInterval(function(){
         //draw_buttons();
       };
     };
-},1);
+},0.1);
 
 
 
@@ -417,11 +445,12 @@ var P = function(x0,y0,x1,y1){
 };
 
 
-window.onmousemove = function(e){
+cvs.onmousemove = function(e){
+console.log(mouse.x,mouse.y);
 
-  mouse.x = e.clientX-5;
+  mouse.x = e.clientX - 78;
 
-  mouse.y = e.clientY-5;
+  mouse.y = e.clientY- 140;
 
   if(mouse.click){
 
