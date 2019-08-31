@@ -145,17 +145,7 @@ if(rect.length && !save && !start && !fin){
 var json;
 
 document.getElementById("save").onclick = function(){
-
-  var save_how_json = {
-    json_rect:rect,
-    json_player:player,
-    json_finish:finish
-  };
-
-  json = JSON.stringify(save_how_json);
-  console.log(json);
   save = true;
-
 };
 
 var c = 0;//для сеточки жирной и не очень
@@ -342,16 +332,28 @@ if(!save){
   var st = player.y - 10;
   var back = player.y + 10;
 
-  if(Math.sqrt(Math.pow(player.x-finish.x,2) + Math.pow(player.y-finish.y,2))<=10){
+  if (Math.sqrt(Math.pow(player.x - finish.x, 2) + Math.pow(player.y - finish.y, 2)) <=10) {
     document.location.reload(true);
-    alert("YOU WIN");
+    alert("YOU WIN\n AND SAVED");
 
+    var save_how_json = {
+      json_rect:rect,
+      json_player:player,
+      json_finish:finish
+    };
 
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    fetch('/maps', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(save_how_json);
+    });
+
   };
 
 
-  for(i in rect){ 
+  for(i in rect){
 
 
       if(rect[i].type == 1){
