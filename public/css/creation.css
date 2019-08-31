@@ -35,6 +35,11 @@ html {
 	margin-top: 6px;
 }
 
+#rangeValue, #rangeValue1, #rangeValue2 {
+	font-size: 12px;
+	margin-left: 2px;
+}
+
 #nameLab {
 	background: url(../visual/creation.jpg);
 	background-size: cover;
