@@ -16,6 +16,7 @@ var create = function(level) {
     button.setAttribute('class', "chosen");
     button.setAttribute('value', "Chosen");
     button.setAttribute('type', "button");
+    button.addEventListener('onclick', "location.href='" + id + "'");
 
     newMap.setAttribute('class', "answer");
     image.setAttribute('class', "vis");
@@ -43,7 +44,8 @@ let Veronika = {
 	author: "Alexandrova",
 	date: "11.08.2019 / 22:33",
 	description: "Let's try it",
-	image: "visual/ver.png"
+	image: "visual/ver.png",
+  id: "creation"
 }
 
 
@@ -60,6 +62,7 @@ var findLevel = function(name) {
     })
     .then(function (levels) {
         console.log(levels);
+
         levels.forEach(function (level) {
             result.appendChild(create(level));
         })
