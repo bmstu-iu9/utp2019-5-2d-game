@@ -347,7 +347,7 @@ if(!save){
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
       },
-      body: JSON.stringify(save_how_json);
+      body: JSON.stringify(save_how_json)
     });
 
   };
