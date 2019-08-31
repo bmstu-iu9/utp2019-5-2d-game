@@ -12,7 +12,11 @@ html {
 }
 
 #nameLab {
+<<<<<<< HEAD
 	background: url(../visual/creation.jpg);
+=======
+	background: url(creation.jpg);
+>>>>>>> afbc43b00ac7f3afcfb75633bad2d0304be8746d
 	background-size: cover;
 	float: right;
 	height: 135px;
@@ -31,11 +35,11 @@ html {
 #exit, #restart {
 	text-align: center;
 	color: #bebebe;
-	width: 13vw;
-	height: 40px;
+	width: 20vw;
+	height: 45px;
 	border-radius: 2.5em;
 	background: #000;
-	margin-top: 5px;
+	margin-top: 10px;
 	font-size: 0.8em;
 }
 
