@@ -15,15 +15,18 @@
     <div id="size">
       <div id="MinW" title="Укажите минимальную ширину лабиринта">
         WIDTH<br>
-        <input type="range" min="1" max="64" value="1" id=number list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;"> <span id="rangeValue">1</span>
+        <input type="range" min="1" max="64" value="1" id=number onchange="document.getElementById('rangeValue').innerHTML = this.value;"> <span id="rangeValue">1</span>
       </div>
       <div id="MinH" title="Укажите минимальную высоту лабиринта">
         HEIGHT<br>
-        <input type="range" min="1" max="64" value="1" id=number1 list="rangeList1" onchange="document.getElementById('rangeValue1').innerHTML = this.value;"> <span id="rangeValue1">1</span> <br>
+        <input type="range" min="1" max="64" value="1" id=number1 onchange="document.getElementById('rangeValue1').innerHTML = this.value;"> <span id="rangeValue1">1</span> <br>
+      </div>
+      <div id="OB" title="Укажите ширину объекта">
+        OBJECT WIDTH<br>
+        <input type="range" min="1" max="10" value="1" id=number2 onchange="document.getElementById('rangeValue2').innerHTML = this.value;"> <span id="rangeValue2">1</span> <br>
       </div>
     </div>
   </form>
-
   <div id="nameLab">
 
   </div>
@@ -33,10 +36,7 @@
       <form id="icons">
         <div class="tooling"><img class="toolingVisual" id="grid" src="../visual/icons/grid.png"></div><hr>
         <div class="tooling"><img class="toolingVisual" id="draw" src="../visual/icons/brush.png"></div><hr>
-        <div class="tooling">
-          <img id="line" src="../visual/icons/line.png">
-          <input type="range" min="1" max="10" value="1" id=number2 orient="vertical">
-        </div><hr>
+        <div class="tooling"><img class="toolingVisual" id="line" src="../visual/icons/line.png"></div><hr>
         <div class="tooling"><img class="toolingVisual" id="rect" src="../visual/icons/square.png"></div><hr>
         <div class="tooling"><img class="toolingVisual" id="arc" src="../visual/icons/circle.png"></div><hr>
         <div class="tooling"><input class="toolingVisual" id="color" type="color"></div><hr>

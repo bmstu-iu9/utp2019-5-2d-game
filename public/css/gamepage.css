@@ -12,20 +12,17 @@ html {
 }
 
 #nameLab {
-<<<<<<< HEAD
 	background: url(../visual/creation.jpg);
-=======
-	background: url(creation.jpg);
->>>>>>> afbc43b00ac7f3afcfb75633bad2d0304be8746d
 	background-size: cover;
 	float: right;
 	height: 135px;
 	width: 1000px;
+	border-right: solid 6px;
 }
 
 #comands {
 	float: left;
-	width: calc(100vw - 1006px);
+	width: calc(100vw - 1012px);
 	height: 123px;
 	border-top: solid 6px;
 	border-bottom: solid 6px;
@@ -43,9 +40,11 @@ html {
 	font-size: 0.8em;
 }
 
-/* #base, #cvs {
-	width: calc(100vw - 72px);
+#base, #cvc {
 	height: calc(100vh - 135px);
-	float: left;
-	background: pink;
-} */
+	width: calc(100vw - 12px);
+	border-left: solid 6px;
+	border-right: solid 6px;
+	bottom: 0;
+	position: fixed;
+}

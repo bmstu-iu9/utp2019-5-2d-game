@@ -20,19 +20,19 @@ html {
 	border-left: solid 6px;
 }
 
-#MinH, #MinW {
+#MinH, #MinW, #OB {
 	text-align: center;
 	color: #bebebe;
-	padding-top: 5px;
+	padding-top: 3px;
 	padding-left: 3%;
 	padding-right: 3%;
 	width: 16vw;
-	height: 35px;
+	height: 30px;
 	border-radius: 2.5em;
 	background: #000;
-	font-size: 0.6em;
+	font-size: 8px;
 	margin: 0 auto;
-	margin-top: 20px;
+	margin-top: 6px;
 }
 
 #nameLab {
@@ -83,16 +83,8 @@ html {
 	margin-top: 10px;
 }
 
-#number, #number1 {
+#number, #number1, #number2 {
   width: 88%;
-}
-
-#number2 {
-	writing-mode: bt-lr; /* IE */
-	-webkit-appearance: slider-vertical; /* WebKit */
-	width: 8px;
-	height: 50px;
-	margin-top: 3px;
 }
 
 #line {
