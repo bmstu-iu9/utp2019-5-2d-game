@@ -11,7 +11,7 @@ var create = function(level) {
     dataAndTime.appendChild(document.createTextNode(level.date));
     description.appendChild(document.createTextNode(level.description));
     image.setAttribute('src', level.image);
-    image.setAttribute('onclick', "location.href='" + id + "'");
+    image.setAttribute('onclick', "location.href='" + level.id + "'");
 
 
     newMap.setAttribute('class', "answer");

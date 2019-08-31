@@ -16,7 +16,8 @@ var create = function(level) {
     button.setAttribute('class', "chosen");
     button.setAttribute('value', "Chosen");
     button.setAttribute('type', "button");
-    button.addEventListener('onclick', "location.href='" + id + "'");
+    local =  "location.href='" + level.id + "'";
+    button.setAttribute('onclick', local);
 
     newMap.setAttribute('class', "answer");
     image.setAttribute('class', "vis");
@@ -45,7 +46,7 @@ let Veronika = {
 	date: "11.08.2019 / 22:33",
 	description: "Let's try it",
 	image: "visual/ver.png",
-  id: "creation"
+  id: "gamepage"
 }
 
 
