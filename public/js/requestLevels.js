@@ -62,7 +62,6 @@ var findLevel = function(name) {
     })
     .then(function (levels) {
         console.log(levels);
-
         levels.forEach(function (level) {
             result.appendChild(create(level));
         })

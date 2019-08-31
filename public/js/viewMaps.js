@@ -4,18 +4,15 @@ var create = function(level) {
         , sizeOfMap = document.createElement("p")
         , dataAndTime = document.createElement("p")
         , description = document.createElement("p")
-        , image = document.createElement("img")
-        , button = document.createElement("input");
+        , image = document.createElement("img");
 
     nameOfMap.appendChild(document.createTextNode(level.name));
     sizeOfMap.appendChild(document.createTextNode(level.size));
     dataAndTime.appendChild(document.createTextNode(level.date));
     description.appendChild(document.createTextNode(level.description));
     image.setAttribute('src', level.image);
+    image.setAttribute('onclick', "location.href='" + id + "'");
 
-    button.setAttribute('class', "chosen");
-    button.setAttribute('value', "Chosen");
-    button.setAttribute('type', "button");
 
     newMap.setAttribute('class', "answer");
     image.setAttribute('class', "vis");
@@ -29,8 +26,6 @@ var create = function(level) {
     newMap.appendChild(description);
     newMap.appendChild(dataAndTime);
     newMap.appendChild(image);
-    newMap.appendChild(button);
-
 
     return newMap;
 }
@@ -44,6 +39,7 @@ let Veronika = {
 	description: "Let's try it",
 	image: "visual/ver.png",
   size: "10x25",
+  id: "creation"
 }
 
 
