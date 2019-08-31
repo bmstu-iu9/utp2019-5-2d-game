@@ -12,7 +12,7 @@ html {
 }
 
 #nameLab {
-	background: url(creation.jpg);
+	background: url(../visual/creation.jpg);
 	background-size: cover;
 	float: right;
 	height: 135px;
@@ -55,24 +55,24 @@ html {
 	border-right: solid 6px;
 	bottom: 0;
 	position: fixed;
-	overflow-y: scroll;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .answer {
 	width: 20vw;
 	height: 20vw;
-	margin-top: 4vw;
-	margin-left: 2vw;
+	margin-top: calc(4vw - 5px);
+	margin-left: calc(4vw - 5px);
 	background-color: #bababa;
 	float: left;
-	
 	border: solid 4px;
 }
 
 /* ************************************************* */
 
 /* имя карты */
-.nom{
+.nom {
 	background: #444444;
 	border-radius: 1em;
 	padding-left: 3%;
@@ -81,7 +81,7 @@ html {
 }
 
 /* размер */
-.des {
+.sizeLab {
 	border-radius: 2.5em;
 	text-align: center;
 	width: 20%;
@@ -116,4 +116,26 @@ html {
 	margin-left: 0.5vw;
 }
 
+/* описание */
+.des {
+	width: 10vw;
+	height: 5vw;
+	padding-left: 1%;
+	padding-top: 1%;
+	float: left;
+	margin-left: 1vw;
+	background: #ACACAC;
+	border: 3px inset #ACACAC;
+}
 
+::-webkit-scrollbar-track {
+	background-color: #ffe02f
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #000
+}
+
+::-webkit-scrollbar {
+	width: 5px
+}

@@ -21,7 +21,7 @@ app.use('/:name', function(req, res) {
         token = req.body.token;
     //if (!token) return res.redirect('/input');
     switch(name) {
-        case 'cabinet': case 'input': case 'registration': case 'search': case 'creation': case 'gamepage':
+        case 'cabinet': case 'input': case 'registration': case 'search': case 'creation': case 'gamepage': case 'view':
             return res.sendFile(__dirname + '/public/html/' + name + '.html')
         default:
             return res.sendStatus(404);
