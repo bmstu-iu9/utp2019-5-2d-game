@@ -48,6 +48,20 @@ html {
 	width: 1000px;
 }
 
+#backBut {
+	text-align: center;
+	color: #bebebe;
+	width: 120px;
+	height: 45px;
+	border-radius: 2.5em;
+	background: #000;
+	margin-top: 10px;
+	font-size: 0.8em;
+	float: right;
+	margin-top: 45px;
+	margin-right: 10px;
+}
+
 #creationLab {
 	width: 100%;
 	height: calc(100vh - 135px);

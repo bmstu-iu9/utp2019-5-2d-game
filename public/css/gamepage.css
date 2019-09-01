@@ -38,6 +38,8 @@ html {
 	background: #000;
 	margin-top: 10px;
 	font-size: 0.8em;
+	margin: 0 auto;
+	margin-top: 15px;
 }
 
 #base, #cvc {

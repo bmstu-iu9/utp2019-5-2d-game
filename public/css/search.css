@@ -12,6 +12,49 @@ html {
 	font-family: 'Montserrat', sans-serif;
 }
 
+nav {
+	position: fixed;
+	width: 100vw;
+	height: 40px;
+	background: #ffe02f;
+	text-align: left;
+	padding-top: 10px;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.one ul {
+	padding: 10px;
+}
+
+.one a {
+  padding: 3em;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.one li {
+  display: inline;
+	margin-top: 10px;
+}
+
+a:link {
+  color: #000;
+	text-decoration: none;
+}
+a:visited {
+  color: #000;
+	text-decoration: none;
+}
+a:hover {
+  color: #a1a1a1;
+	text-decoration: none;
+}
+a:active {
+  color: #a1a1a1;
+	text-decoration: none;
+}
+
 #uname{
 	float: left;
 	margin-top: 30vh;
