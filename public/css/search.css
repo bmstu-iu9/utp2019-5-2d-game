@@ -12,30 +12,15 @@ html {
 	font-family: 'Montserrat', sans-serif;
 }
 
-nav {
-	position: fixed;
-	width: 100vw;
-	height: 40px;
-	background: #ffe02f;
-	text-align: left;
-	padding-top: 10px;
-	text-decoration: none;
-	font-size: 20px;
+#header {
+	width: 50vw;
+	float: right;
+	margin-top: 8vh;
+	font-weight: bold;
 }
 
-.one ul {
-	padding: 10px;
-}
-
-.one a {
-  padding: 3em;
-	margin-left: 10px;
-	margin-top: 10px;
-}
-
-.one li {
-  display: inline;
-	margin-top: 10px;
+a {
+	margin-left: 3em;
 }
 
 a:link {
@@ -55,15 +40,6 @@ a:active {
 	text-decoration: none;
 }
 
-#uname{
-	float: left;
-	margin-top: 30vh;
-	text-align: center;
-	font-weight: bold;
-	margin-left: 30vw;
-	width: 30em;
-}
-
 #but1 {
 	height: 3em;
 	margin: 0.5em;
@@ -73,6 +49,8 @@ a:active {
 	font-weight: bold;
 	width: 8.4em;
 	background: #ffe02f;
+	float: right;
+	margin-right: 8px;
 }
 
 #unamet {
@@ -82,26 +60,43 @@ a:active {
 	font-weight: bold;
 	width: 18em;
 	background: #000;
+	float: right;
+	margin-right: 8px;
+}
+
+#uname{
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	width: 49vw;
+	margin-top: 20vh;
 }
 
 #size {
 	float: right;
-	margin-right: 4vw;
-	margin-top: 15vh;
+	width: 50vw;
+	margin-top: 9vh;
 }
 
-#MinH, #MinW {
+#MinW, #MinH {
 	text-align: center;
 	color: #bebebe;
 	padding-top: 2%;
 	padding-left: 2%;
 	padding-right: 2%;
-	width: 20vw;
-	height: 40px;
+	width: 18vw;
+	height: 32px;
 	border-radius: 2.5em;
 	background: #000;
-	margin-top: 5px;
-	font-size: 0.8em;
+	font-size: 10px;
+	margin-bottom: 2vh;
+	float: left;
+	margin-left: 8px;
+}
+
+#rangeValue, #rangeValue1 {
+	font-size: 12px;
+	margin-left: 2px;
 }
 
 #number, #number1 {

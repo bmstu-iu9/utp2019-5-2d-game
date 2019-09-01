@@ -21,32 +21,28 @@
   </head>
 
   <body>
-    <nav class="one">
-      <ul>
-        <li><a href="cabinet">Personal account</a></li>
-        <li><a href="search">Search game</a></li>
-        <li><a href="view">Your labyrinths</a></li>
-      </ul>
-    </nav>
-
+    <div id="header">
+      <a href="cabinet">PERSONAL ACCOUNT</a>
+      <a href="search">SEARCH GAME</a>
+      <a href="view">YOUR LABYRINTHS</a>
+    </div>
     <form>
+      <div id="uname">
+        <input id="but1" type="button" value="Search">
+        <input type="text" id=unamet placeholder="USER NAME" title="Имя автора">
+      </div>
+
       <div id="size">
         <div id="MinW" title="Укажите минимальную ширину лабиринта">
           WIDTH <br>
-          <input type="range" min="1" max="64" value="1" id=number onchange="document.getElementById('rangeValue').innerHTML = this.value;"> <span id="rangeValue">1</span> <br>
+          <input type="range" min="1" max="64" value="1" id=number onchange="document.getElementById('rangeValue').innerHTML = this.value;"> <span id="rangeValue">1</span>
         </div>
         <div id="MinH" title="Укажите минимальную высоту лабиринта">
           HEIGHT <br>
           <input type="range" min="1" max="64" value="1" id=number1 onchange="document.getElementById('rangeValue1').innerHTML = this.value;"> <span id="rangeValue1">1</span> <br>
         </div>
       </div>
-
-      <div id="uname">
-        <input type="text" id=unamet placeholder="USER NAME" title="Имя автора">
-        <input id="but1" type="button" value="Search">
-      </div>
     </form>
-
     <script src="../js/requestLevels.js"></script>
 
     <div id="result"></div>
