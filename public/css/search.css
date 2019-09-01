@@ -15,7 +15,7 @@ html {
 #header {
 	width: 50vw;
 	float: right;
-	margin-top: 8vh;
+	margin-top: 10vh;
 	font-weight: bold;
 }
 
@@ -69,13 +69,13 @@ a:active {
 	text-align: center;
 	font-weight: bold;
 	width: 49vw;
-	margin-top: 20.7vh;
+	margin-top: 21vh;
 }
 
 #size {
 	float: right;
 	width: 50vw;
-	margin-top: 9vh;
+	margin-top: 7vh;
 }
 
 #MinW, #MinH {
@@ -85,11 +85,11 @@ a:active {
 	padding-left: 2%;
 	padding-right: 2%;
 	width: 18vw;
-	height: 32px;
+	height: 37px;
 	border-radius: 2.5em;
 	background: #000;
 	font-size: 10px;
-	margin-bottom: 2vh;
+	margin-bottom: 1vh;
 	float: left;
 	margin-left: 8px;
 }
