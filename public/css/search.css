@@ -104,7 +104,7 @@ a:active {
 }
 
 #result {
-	height: 60vh;
+	height: 65vh;
 	width: 90vw;
 	margin-top: 2vh;
 	margin-left: 5vw;
@@ -171,7 +171,8 @@ a:active {
 	margin-right: 3vw;
 	background: #ACACAC;
 	border: 3px inset #ACACAC;
-	margin-top: 2vh;
+	margin-top: 5vh;
+	margin-bottom: 2vh;
 }
 
 ::-webkit-scrollbar-track {
