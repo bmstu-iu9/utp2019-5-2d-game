@@ -1,27 +1,41 @@
 "use strict"
+
 var cvs=document.getElementById('cvs');
+
 var ctx=cvs.getContext("2d");
+
 var cvswidth=window.innerWidth - 72 ;
+
 var cvsheight=window.innerHeight - 135;
+
 cvs.width=cvswidth;
+
 cvs.height=cvsheight;
+
 cvs.style.backgroundColor="darkgray";
 
 var PI = Math.PI;
+
 var grid = [];
+
 var Mycolor="black";
+
 var Mylinewidth = 1;
 
 document.getElementById("number2").oninput = function(){
+
   Mylinewidth = this.value;
-//  alert(Mylinewidth);
+
 };
+
 document.getElementById("color").oninput= function(){
   Mycolor = this.value
 };
 
 var res = (screen.width/1920);
+
 var save = false;
+
 var Wall = function(x0,y0,x1,y1,R,color,width,type){
   this.x0 = x0,
   this.y0 = y0,
@@ -33,7 +47,6 @@ var Wall = function(x0,y0,x1,y1,R,color,width,type){
   this.width = width
 };
 
-
 var move = {
   w:true,
   s:true,
@@ -41,16 +54,12 @@ var move = {
   d:true
 };
 
-
 var Grid = function(x0,y0,x1,y1){
   this.x0 = x0,
   this.y0 = y0,
   this.x1 = x1,
   this.y1 = y1
 };
-
-//var fs = require('fs');
-
 
 document.addEventListener("keydown",function(e){
   var i;
@@ -136,7 +145,7 @@ if(rect.length && !save && !start && !fin){
         rect.pop();
       };
     }
-    else {
+  else {
       rect.pop();
     };
   };
@@ -145,7 +154,17 @@ if(rect.length && !save && !start && !fin){
 var json;
 
 document.getElementById("save").onclick = function(){
+
+  var save_how_json = {
+    json_rect:rect,
+    json_player:player,
+    json_finish:finish
+  };
+
+  json = JSON.stringify(save_how_json);
+  console.log(json);
   save = true;
+
 };
 
 var c = 0;//для сеточки жирной и не очень
@@ -185,21 +204,15 @@ var cursor = {
   confrim:false
 };
 
-
-
 var player = {
   x:12 * res,
   y:12 * res
 };
 
-
-
 var finish = {
   x:cvswidth-12*res,
   y:cvsheight-12*res
 };
-
-
 
 var rect = [], i,j,radius = 3,index=0,start=true,fin=false;
 
@@ -221,7 +234,7 @@ var player_in_finish = function(){
 
 var playerinLine = function(r,x,y){
   if(r.type == 3 || r.type == 2){
-   return  (Math.abs((r.y1-r.y0)*x - (r.x1-r.x0) * y + (r.x1 * r.y0) - (r.y1 * r.x0))/(Math.sqrt(( Math.pow(r.y1 - r.y0,2)) + (Math.pow((r.x1 - r.x0),2)))))<=5 && playerXline(r) && playerYline(r);
+   return  (Math.abs((r.y1-r.y0)*x - (r.x1-r.x0) * y + (r.x1 * r.y0) - (r.y1 * r.x0))/(Math.sqrt(( Math.pow(r.y1 - r.y0,2)) + (Math.pow((r.x1 - r.x0),2))))) <= (5 * res + r.width) && playerXline(r) && playerYline(r);
   };
 };
 
@@ -244,11 +257,6 @@ var playerINwall = function (r,x,y) {
     return x >= r.x0 && x <= r.x0 + r.x1 && y >= r.y0 && y <= r.y0+r.y1;
   };
 };
-
-var r = player.x + 10;
-var l = player.x - 10;
-var st = player.y - 10;
-var back = player.y + 10;
 
 if(!save){
     setInterval(function(){
@@ -332,24 +340,12 @@ if(!save){
   var st = player.y - 10;
   var back = player.y + 10;
 
-  if (Math.sqrt(Math.pow(player.x - finish.x, 2) + Math.pow(player.y - finish.y, 2)) <=10) {
+  if(Math.sqrt(Math.pow(player.x-finish.x,2) + Math.pow(player.y-finish.y,2))<=10){
     document.location.reload(true);
-    alert("YOU WIN\n AND SAVED");
+    alert("YOU WIN");
 
-    var save_how_json = {
-      json_rect:rect,
-      json_player:player,
-      json_finish:finish
-    };
 
-    fetch('/maps', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify(save_how_json)
-    });
-
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   };
 
 
@@ -439,9 +435,6 @@ if(!save){
   },0.1);
 };
 
-
-
-
 var mx_down = mouse.x,my_down = mouse.y;
 
 var mousex = -1;//позиции при нажатии
@@ -460,6 +453,8 @@ var P = function(x0,y0,x1,y1){
   return Math.sqrt( Math.pow(x1-x0,2) + Math.pow(y1-y0,2) );
 };
 
+
+
 cvs.onmousemove = function(e){
 
   mouse.x = e.clientX - 78;
@@ -467,7 +462,6 @@ cvs.onmousemove = function(e){
   mouse.y = e.clientY- 140;
 
   if(mouse.click){
-
 
     if(!save &&cursor.draw && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight){
 
@@ -478,7 +472,6 @@ cvs.onmousemove = function(e){
       cnt+=2;
 
     };//когда нажата кнопка рисования от руки
-
 
     if(cursor.line && !save){
 
@@ -512,21 +505,25 @@ cvs.onmousemove = function(e){
 
     my_down = mouse.y
 
-
     if(cursorinplayer() && mouse.click && start){
-      player.x=mouse.x
-      player.y=mouse.y
-    }
+
+      player.x=mouse.x;
+
+      player.y=mouse.y;
+
+    };
+
     if(cursorinfinish() && mouse.click && fin){
+
       finish.x=mouse.x;
+
       finish.y=mouse.y;
+
     }
 
   }
+
 };
-
-
-
 
 var count = [] , cnt;
 
@@ -559,8 +556,8 @@ window.onmousedown = function(){
   };
 };
 
-
 window.onmouseup = function(){
+
   if(cursor.draw && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight && !save){
 
     count.push(cnt);
@@ -599,6 +596,6 @@ window.onmouseup = function(){
     fin = true
   };
 
-
   mouse.click = false;
+
 };
