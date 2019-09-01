@@ -41,7 +41,7 @@ a:active {
 }
 
 #but1 {
-	height: 3em;
+	height: 32px;
 	margin: 0.5em;
 	margin-top: 0.25em;
 	border-radius: 2.5em;
@@ -54,7 +54,7 @@ a:active {
 }
 
 #unamet {
-	height: 3em;
+	height: 32px;
 	border-radius: 2.5em;
 	text-align: center;
 	font-weight: bold;
@@ -69,7 +69,7 @@ a:active {
 	text-align: center;
 	font-weight: bold;
 	width: 49vw;
-	margin-top: 20vh;
+	margin-top: 20.7vh;
 }
 
 #size {
