@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8"/>
-  <link rel="stylesheet" type="text/css" href="../css/cabinet.css"/>
-  <link rel="icon" href="../visual/iconka.ico"/>
-  <title>Личный кабинет</title>
-</head>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/cabinet.css"/>
+    <link rel="icon" href="../visual/iconka.ico"/>
+    <title>Личный кабинет</title>
+  </head>
 
-<body>
+  <body>
+    <div id="base">
+      <input id=uname type="text" placeholder="..USER NAME.." readonly><br/><!--Пока что текстом, потому что не знаю, каким тегом вытаскивать его из БД-->
+      <input id=view type="button" name="view" value="View levels" onclick=location.href="view"> <br/>
+      <input id=editor type="button" name="editor" value="Level editor" onclick=location.href="creation"> <br/>
+      <input id=play type="button" name="play" value="PLAY" onclick=location.href="search">
+    </div> <br>
 
-  <div id="base">
-    <input id=uname type="text" placeholder="..USER NAME.." readonly><br/><!--Пока что текстом, потому что не знаю, каким тегом вытаскивать его из БД-->
-    <input id=view type="button" name="view" value="View levels" onclick=location.href="#"> <br/>
-    <input id=editor type="button" name="editor" value="Level editor" onclick=location.href="creation"> <br/>
-    <input id=play type="button" name="play" value="PLAY" onclick=location.href="search">
-  </div> <br>
-
-  <div id="footer">
-    Данный сайт разработан: Чернышовым Иваном, Черненковым Андреем, Елисеевой Миленой,
-    Александровой Вероникой, Муравлевым Всеволодом и Гримбергом Дмитрием
-  </div>
-</body>
+    <div id="footer">
+      Данный сайт разработан: Чернышовым Иваном, Черненковым Андреем, Елисеевой Миленой,
+      Александровой Вероникой, Гримбергом Дмитрием и Муравлевым Всеволодом
+    </div>
+  </body>
 
 </html>

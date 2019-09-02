@@ -1,0 +1,52 @@
+* {
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	background: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#nameLab {
+	background: url(../visual/creation.jpg);
+	background-size: cover;
+	float: right;
+	height: 135px;
+	width: 1000px;
+	border-right: solid 6px;
+}
+
+#comands {
+	float: left;
+	width: calc(100vw - 1012px);
+	height: 123px;
+	border-top: solid 6px;
+	border-bottom: solid 6px;
+	border-left: solid 6px;
+}
+
+#exit, #restart {
+	text-align: center;
+	color: #bebebe;
+	width: 20vw;
+	height: 45px;
+	border-radius: 2.5em;
+	background: #000;
+	margin-top: 10px;
+	font-size: 0.8em;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+
+#base, #cvc {
+	height: calc(100vh - 135px);
+	width: calc(100vw - 12px);
+	border-left: solid 6px;
+	border-right: solid 6px;
+	bottom: 0;
+	position: fixed;
+}

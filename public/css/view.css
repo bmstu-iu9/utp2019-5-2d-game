@@ -1,0 +1,146 @@
+* {
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	background: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#nameLab {
+	background: url(../visual/creation.jpg);
+	background-size: cover;
+	float: right;
+	height: 135px;
+	width: 1000px;
+	border-right: solid 6px;
+}
+
+/* ************************************************* */
+
+#comands {
+	float: left;
+	width: calc(100vw - 1012px);
+	height: 123px;
+	border-top: solid 6px;
+	border-bottom: solid 6px;
+	border-left: solid 6px;
+}
+
+#head1 {
+	margin-top: 0;
+}
+
+#searchBut, #cabinetBut {
+	text-align: center;
+	color: #bebebe;
+	width: 20vw;
+	height: 45px;
+	border-radius: 2.5em;
+	background: #000;
+	margin-top: 10px;
+	font-size: 0.8em;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+
+/* ************************************************* */
+
+#result {
+	height: calc(100vh - 135px);
+	width: calc(100vw - 12px);
+	border-left: solid 6px;
+	border-right: solid 6px;
+	bottom: 0;
+	position: fixed;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.answer {
+	width: 20vw;
+	height: 20vw;
+	margin-top: calc(4vw - 5px);
+	margin-left: calc(4vw - 5px);
+	background-color: #bababa;
+	float: left;
+	border: solid 4px;
+}
+
+/* ************************************************* */
+
+/* имя карты */
+.nom {
+	background: #444444;
+	border-radius: 1em;
+	padding-left: 3%;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+/* размер */
+.sizeLab {
+	border-radius: 2.5em;
+	text-align: center;
+	width: 4vw;
+	height: 3vh;
+	/* padding-left: 1%; */
+	padding-top: 1%;
+	margin-right: 0.5vw;
+	margin-top: 0.5vw;
+	font-size: 1vw;
+	font-weight: 650;
+	/* float: left; */
+	background: #ACACAC;
+	/* border: 3px inset #ACACAC; */
+	float: right;
+}
+
+/* дата создания */
+.tim {
+	margin-right: 0.5vw;
+	margin-top: 0.5vw;
+	/* float:left; */
+	font-size: 0.9vw;
+	font-weight: 650;
+	/* margin-left: 2%; */
+	font-weight: bold;
+	float: right;
+}
+
+/* рисунок лабиринта */
+.vis {
+	margin-top: 1vw;
+	width: 15vw;
+	height: 10vw;
+	margin-left: 0.5vw;
+}
+
+/* описание */
+.des {
+	width: 10vw;
+	height: 5vw;
+	padding-left: 1%;
+	padding-top: 1%;
+	float: left;
+	margin-left: 0.5vw;
+	background: #ACACAC;
+	border: 3px inset #ACACAC;
+	margin-top: 2px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #ffe02f
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #000
+}
+
+::-webkit-scrollbar {
+	width: 5px
+}

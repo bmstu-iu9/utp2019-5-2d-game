@@ -12,22 +12,36 @@ html {
 	font-family: 'Montserrat', sans-serif;
 }
 
-#search {
-	margin-left: 5%;
-	background: blue;
+#header {
+	width: 50vw;
+	float: right;
+	margin-top: 10vh;
+	font-weight: bold;
 }
 
-#uname{
-	float: left;
-	margin-top: 30vh;
-	text-align: center;
-	font-weight: bold;
-	margin-left: 30vw;
-	width: 30em;
+a {
+	margin-left: 3em;
+}
+
+a:link {
+  color: #000;
+	text-decoration: none;
+}
+a:visited {
+  color: #000;
+	text-decoration: none;
+}
+a:hover {
+  color: #a1a1a1;
+	text-decoration: none;
+}
+a:active {
+  color: #a1a1a1;
+	text-decoration: none;
 }
 
 #but1 {
-	height: 3em;
+	height: 32px;
 	margin: 0.5em;
 	margin-top: 0.25em;
 	border-radius: 2.5em;
@@ -35,87 +49,130 @@ html {
 	font-weight: bold;
 	width: 8.4em;
 	background: #ffe02f;
+	float: right;
+	margin-right: 8px;
 }
 
 #unamet {
-	height: 3em;
+	height: 32px;
 	border-radius: 2.5em;
 	text-align: center;
 	font-weight: bold;
 	width: 18em;
 	background: #000;
+	float: right;
+	margin-right: 8px;
+}
+
+#uname{
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	width: 49vw;
+	margin-top: 21vh;
 }
 
 #size {
 	float: right;
-	margin-right: 20px;
-	margin-top: 15vh;
+	width: 50vw;
+	margin-top: 7vh;
 }
 
-#MinH, #MinW {
+#MinW, #MinH {
 	text-align: center;
 	color: #bebebe;
 	padding-top: 2%;
 	padding-left: 2%;
 	padding-right: 2%;
-	width: 20vw;
-	height: 40px;
+	width: 18vw;
+	height: 37px;
 	border-radius: 2.5em;
 	background: #000;
-	margin-top: 5px;
-	font-size: 0.8em;
+	font-size: 10px;
+	margin-bottom: 1vh;
+	float: left;
+	margin-left: 8px;
+}
+
+#rangeValue, #rangeValue1 {
+	font-size: 12px;
+	margin-left: 2px;
 }
 
 #number, #number1 {
   width: 16vw;
 }
 
-#nom {
-	background: #444444;
-	border-radius: 1em;
-	padding-left: 3%;
-	font-size: 120%;
-	font-weight: bold;
-}
-
-#usr {
-	margin-left: 2%;
-	font-weight: bold;
-	margin-top: 1%;
-}
-
-#tim {
-	margin-left: 2%;
-	font-weight: bold;
-}
-
-#vis {
-	margin-top: 2vw;
-	width: 30%;
-	height: 40vh;
-	margin-left: 2vw;
-}
-
-#des {
-	width: 50%;
-	height: 40vh;
-	padding-left: 1%;
-	padding-top: 1%;
-	margin-right: 10%;
-	margin-top: 3vw;
-	float: right;
-	background: #ACACAC;
-	border: 3px inset #ACACAC;
-}
-
 #result {
-	height: 60vh;
+	height: 65vh;
 	width: 90vw;
 	margin-top: 2vh;
 	margin-left: 5vw;
 	background: #fff;
 	border: #000 inset 5px;
 	overflow-y: scroll;
+}
+
+.answer { /*сам блок*/
+	height: 100%;
+	width: 100%;
+}
+
+.nom { /*название лабиринта*/
+	background: #444444;
+	border-radius: 10px;
+	padding-left: 3%;
+	font-size: 120%;
+	font-weight: bold;
+	height: 20px;
+}
+
+.chosen { /*кнопка, чтоб начать прохождение*/
+	width: 8.4em;
+	height: 3em;
+	float: right;
+	background-color: #bababa;
+	color: #000;
+	border-radius: 2.5em;
+	text-align: center;
+	font-weight: bold;
+	border: #ACACAC outset 2px;
+	margin-left: 90%;
+	margin-right: 3%;
+}
+
+.usr { /*имя автора*/
+	margin-left: 2%;
+	font-weight: bold;
+	margin-top: 1%;
+	width: 30%;
+}
+
+.tim { /*время создания*/
+	margin-left: 2%;
+	font-weight: bold;
+	width: 30%;
+}
+
+.vis { /*лабиринт*/
+	margin-top: 1vw;
+	width: 30%;
+	height: 40vh;
+	margin-left: 2vw;
+	float: left;
+}
+
+.des { /*описание*/
+	width: 50%;
+	height: 38vh;
+	padding-left: 1%;
+	padding-top: 1%;
+	float: right;
+	margin-right: 3vw;
+	background: #ACACAC;
+	border: 3px inset #ACACAC;
+	margin-top: 5vh;
+	margin-bottom: 2vh;
 }
 
 ::-webkit-scrollbar-track {
@@ -128,11 +185,6 @@ html {
 
 ::-webkit-scrollbar {
 	width: 8px
-}
-
-#answer {
-	height: 100%;
-	width: 100%;
 }
 
 #footer {

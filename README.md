@@ -12,4 +12,4 @@
 3. Елисеева Милена Алексеевна         (vip.milael@mail.ru, https://github.com/snailfighting)
 4. Александрова Вероника Олеговна  (veronika.aleksandrova.00@bk.ru, https://github.com/NikAlex0610)
 5. Гримберг Дмитрий Сергеевич          (Dima.ggrimbergg@gmail.com, https://github.com/1grim1)
-6. Черненков Андрей Ильич                 (andrey.Сhernenkov@mail.ru)
+6. Черненков Андрей Ильич                 (andrey.Сhernenkov@mail.ru, https://github.com/ultraded)
