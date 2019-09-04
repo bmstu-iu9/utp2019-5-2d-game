@@ -1,5 +1,0 @@
-
-
-function doFetchRequest(url, body) {
-    
-}

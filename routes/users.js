@@ -15,6 +15,10 @@ usersRouter.get('/:name', function(req, res) {
     })
 })
 
+usersRouter.get('/', function(req, res) {
+    res.json(req.user);
+})
+
 usersRouter.post('/', function(req, res) {
     console.log('requset body is ');
     console.log(req.body);

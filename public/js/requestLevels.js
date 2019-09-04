@@ -38,7 +38,7 @@ let Veronika = {
     image: "visual/ver.png"
 }
 
-
+let levelButtons = []
 
 var tryIt = function(name) {
     result.innerText = '';
@@ -52,11 +52,21 @@ var tryIt = function(name) {
     })
     .then(function (levels) {
         console.log(levels);
+        levelBttns = [];
         levels.forEach(function (level) {
-            result.appendChild(create(level));
+            let bttn = result.appendChild(create(level));
+            bttn.id= level.id;
+            levelButtons.push(bttn);
+        })
+        levelButtons.forEach((bttn) => {
+            bttn.addEventListener('onclck', function() {
+                redirect(`/levels/${bttn.id}`);
+            })
         })
     })
 }
+
+
 
 
 document.getElementById("but1").addEventListener("click", function(){ tryIt(Veronika) });

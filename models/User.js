@@ -1,3 +1,5 @@
+'use strict';
+
 var mongoose = require('mongoose');
 var crypto = require('crypto');
 var ObjectID = mongoose.Schema.Types.ObjectId;
@@ -11,9 +13,14 @@ var UserSchema = new mongoose.Schema({
 
 var User = mongoose.model('User', UserSchema);
 
-UserSchema.methods.validPassword = function(pwd) {
-    var hash = crypto.pbkdf2(pwd, this.salt, 1000, 64, 'sha512').toString('hex');
-    return this.hash === hash;
+module.exports.validatePassword = function(user, pwd) {
+    return new Promise(function(resolve, reject) {
+        crypto.pbkdf2(pwd, user.salt, 1000, 64, 'sha512', function(err, hash) {
+            if (err) return reject(err);
+            if (hash.toString('hex') === user.hash) return resolve(user);
+            return reject('password incorrect');
+        })
+    })
 }
 
 module.exports.createUser = function(name, password) {
@@ -42,6 +49,6 @@ module.exports.createUser = function(name, password) {
 }
 
 module.exports.getByName = function(name) {
-    return User.findOne({name: name});
+    return User.findOne({username: name});
 }
 
