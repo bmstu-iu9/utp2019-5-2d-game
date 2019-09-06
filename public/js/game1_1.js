@@ -63,7 +63,6 @@ var Grid = function(x0,y0,x1,y1){
 
 document.addEventListener("keydown",function(e){
   var i;
-  if(save){
     for(i in rect){
     move.w = move.w && !playerinLine(rect[i], player.x, player.y - 5) && !playerINwall(rect[i],player.x, player.y - 5) && !playerinarc(rect[i], player.x, player.y - 5);
     move.s =move.s && !playerinLine(rect[i], player.x, player.y + 5) && !playerINwall(rect[i],player.x, player.y + 5) && !playerinarc(rect[i], player.x, player.y + 5);
@@ -88,7 +87,6 @@ document.addEventListener("keydown",function(e){
       move.s = true;
       move.d = true;
       move.a = true;
-  }
 });
 
 document.getElementById("draw").onclick = function(){
@@ -154,7 +152,17 @@ if(rect.length && !save && !start && !fin){
 var json;
 
 document.getElementById("save").onclick = function(){
+
+  var save_how_json = {
+    json_rect:rect,
+    json_player:player,
+    json_finish:finish
+  };
+
+  json = JSON.stringify(save_how_json);
+  console.log(json);
   save = true;
+
 };
 
 var c = 0;//для сеточки жирной и не очень
@@ -330,24 +338,12 @@ if(!save){
   var st = player.y - 10;
   var back = player.y + 10;
 
-  if (Math.sqrt(Math.pow(player.x - finish.x, 2) + Math.pow(player.y - finish.y, 2)) <=10) {
+  if(Math.sqrt(Math.pow(player.x-finish.x,2) + Math.pow(player.y-finish.y,2))<=10){
     document.location.reload(true);
-    alert("YOU WIN\n AND SAVED");
+    alert("YOU WIN");
 
-    var save_how_json = {
-      json_rect:rect,
-      json_player:player,
-      json_finish:finish
-    };
 
-    fetch('/levels', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify(save_how_json)
-    });
-
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   };
 
 
