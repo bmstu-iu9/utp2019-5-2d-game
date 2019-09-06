@@ -2,20 +2,40 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var auth = require('./middleware/auth')
 var logger = require('./logger');
 var levelRouter = require('./routes/level');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/login');
 
 var app = express();
 
-app.use(bodyParser.urlencoded({ extended: false}))
+var data = {
+    name: "user"
+}
+
+var tokenizer = require('./util/token');
+/*
+tokenizer.sign(data)
+.then(function(token) {
+    return tokenizer.validate(token);
+})
+.then(console.log)
+.catch(console.log);*/
+
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(express.static('public'));
 app.use(logger.log);
 
+
+app.use("/users", auth);
+
+app.use('/input', loginRouter);
 app.use('/levels', levelRouter);
 app.use('/users', usersRouter);
-
 app.use('/:name', function(req, res) {
     let name = req.params.name,
         token = req.body.token;
