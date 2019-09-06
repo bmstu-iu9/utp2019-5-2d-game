@@ -1,38 +1,31 @@
 var create = function(level) {
     var newMap = document.createElement("div")
         , nameOfMap = document.createElement("p")
-        , userName = document.createElement("p")
+        , sizeOfMap = document.createElement("p")
         , dataAndTime = document.createElement("p")
         , description = document.createElement("p")
-        , image = document.createElement("img")
-        , button = document.createElement("input");
+        , image = document.createElement("img");
 
     nameOfMap.appendChild(document.createTextNode(level.name));
-    userName.appendChild(document.createTextNode(level.author));
+    sizeOfMap.appendChild(document.createTextNode(level.size));
     dataAndTime.appendChild(document.createTextNode(level.date));
     description.appendChild(document.createTextNode(level.description));
     image.setAttribute('src', level.image);
+    image.setAttribute('onclick', "location.href='" + level.id + "'");
 
-    button.setAttribute('class', "chosen");
-    button.setAttribute('value', "Chosen");
-    button.setAttribute('type', "button");
-    local =  "location.href='" + level.id + "'";
-    button.setAttribute('onclick', local);
 
     newMap.setAttribute('class', "answer");
     image.setAttribute('class', "vis");
     nameOfMap.setAttribute('class', "nom");
-    userName.setAttribute('class', "usr");
+    sizeOfMap.setAttribute('class', "sizeLab");
     dataAndTime.setAttribute('class', "tim");
     description.setAttribute('class', "des");
 
     newMap.appendChild(nameOfMap);
-    newMap.appendChild(userName);
+    newMap.appendChild(sizeOfMap);
     newMap.appendChild(description);
     newMap.appendChild(dataAndTime);
     newMap.appendChild(image);
-    newMap.appendChild(button);
-
 
     return newMap;
 }
@@ -42,11 +35,11 @@ var create = function(level) {
 //Example of level info
 let Veronika = {
 	name: "BMSTU",
-	author: "Alexandrova",
 	date: "11.08.2019 / 22:33",
 	description: "Let's try it",
 	image: "visual/ver.png",
-  id: "gamepage"
+  size: "10x25",
+  id: "creation"
 }
 
 
@@ -70,7 +63,7 @@ var findLevel = function(name) {
 }
 
 //this for final version. 'Search' is something that you're trying to find
-//document.getElementById("but1").addEventListener("click", function(){ findLevel(Search) });
+//document.getElementById("nameLab").addEventListener("click", findLevel(Search) );
 
 
 var tryIt = function(level) {
@@ -79,4 +72,4 @@ var tryIt = function(level) {
 }
 
 //but for testing it out use this
-document.getElementById("but1").addEventListener("click", function(){ tryIt(Veronika) });
+document.getElementById("nameLab").addEventListener("click", tryIt(Veronika) );

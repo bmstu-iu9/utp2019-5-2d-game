@@ -41,7 +41,7 @@ app.use('/:name', function(req, res) {
         token = req.body.token;
     //if (!token) return res.redirect('/input');
     switch(name) {
-        case 'cabinet': case 'input': case 'registration': case 'search':
+        case 'cabinet': case 'input': case 'registration': case 'search': case 'creation': case 'gamepage': case 'view':
             return res.sendFile(__dirname + '/public/html/' + name + '.html')
         default:
             return res.sendStatus(404);
@@ -55,5 +55,3 @@ app.listen(3012, function() {
     .then(() => logger.msg("API started"))
     .catch((err) => logger.msg(err));
 })
-
-

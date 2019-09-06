@@ -1,0 +1,112 @@
+* {
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	background: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#size {
+	float: left;
+	width: calc(100vw - 1006px);
+	height: 123px;
+	border-top: solid 6px;
+	border-bottom: solid 6px;
+	border-left: solid 6px;
+}
+
+#MinH, #MinW, #OB {
+	text-align: center;
+	color: #bebebe;
+	padding-top: 3px;
+	padding-left: 3%;
+	padding-right: 3%;
+	width: 16vw;
+	height: 30px;
+	border-radius: 2.5em;
+	background: #000;
+	font-size: 8px;
+	margin: 0 auto;
+	margin-top: 6px;
+}
+
+#rangeValue, #rangeValue1, #rangeValue2 {
+	font-size: 12px;
+	margin-left: 2px;
+}
+
+#nameLab {
+	background: url(../visual/creation.jpg);
+	background-size: cover;
+	float: right;
+	height: 135px;
+	width: 1000px;
+}
+
+#backBut {
+	text-align: center;
+	color: #bebebe;
+	width: 120px;
+	height: 45px;
+	border-radius: 2.5em;
+	background: #000;
+	margin-top: 10px;
+	font-size: 0.8em;
+	float: right;
+	margin-top: 45px;
+	margin-right: 10px;
+}
+
+#creationLab {
+	width: 100%;
+	height: calc(100vh - 135px);
+	bottom: 0;
+	position: fixed;
+}
+
+#menu {
+	width: 60px;
+	height: calc(100vh - 135px);
+	float: left;
+	border-right: solid 6px;
+	background-color: #ffe02f;
+	border-left: solid 6px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#base, #cvs {
+	width: calc(100vw - 72px);
+	height: calc(100vh - 135px);
+	float: left;
+}
+
+::-webkit-scrollbar {
+	width: 2px
+}
+
+.tooling {
+	height: 60px;
+	width: 60px;
+}
+
+.toolingVisual {
+	height: 40px;
+	width: 40px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#number, #number1, #number2 {
+  width: 88%;
+}
+
+#line {
+	height: 40px;
+	width: 40px;
+}

@@ -1,197 +1,199 @@
 * {
 	outline: none;
+	margin: 0;
+	padding: 0;
 }
 
-
-html{
-	/* max-width: 100%; */
+html {
 	height: 100%;
-	background: linear-gradient(45deg, #2A2A2A, #BEBEBE);
+	width: 100%;
+	background: url(../visual/search.jpg) no-repeat;
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
 }
 
-/* -------------------------------------------------------------- */
-
-h1{
-	margin: 0.5%;
-	font-size: 60%;
-	color: #EBEBEB;
-	/* float:left; */
-}
-
-#LB{
-	background-attachment: fixed;
-	/* display: grid; */
-	margin-right: 1%;
-	/* margin-top: 5%; */
-	width: 30%;
+#header {
+	width: 50vw;
 	float: right;
-}
-
-/* -------------------------------------------------------------- */
-
-#search{
-	/* margin-top:3%; */
-	margin-left:5%;
-}
-
-#size{
-	float:left;
-}
-
-
-#uname{
-	margin: 0.5em;
-	margin-top: 0.25em;
-	border-radius: 1em;
-	text-align: center;
+	margin-top: 10vh;
 	font-weight: bold;
-	left:20px;
 }
 
-#but1{
-	height: 3em;
+a {
+	margin-left: 3em;
+}
+
+a:link {
+  color: #000;
+	text-decoration: none;
+}
+a:visited {
+  color: #000;
+	text-decoration: none;
+}
+a:hover {
+  color: #a1a1a1;
+	text-decoration: none;
+}
+a:active {
+  color: #a1a1a1;
+	text-decoration: none;
+}
+
+#but1 {
+	height: 32px;
 	margin: 0.5em;
 	margin-top: 0.25em;
-	border-radius: 1em;
+	border-radius: 2.5em;
 	text-align: center;
 	font-weight: bold;
 	width: 8.4em;
-	background: #696969;
-	color: #2A2A2A;
+	background: #ffe02f;
+	float: right;
+	margin-right: 8px;
 }
 
-#unamet{
-	height: 3em;
-	border-radius: 1em;
+#unamet {
+	height: 32px;
+	border-radius: 2.5em;
 	text-align: center;
 	font-weight: bold;
 	width: 18em;
-	background: #444444;
-	color: #2A2A2A;
+	background: #000;
+	float: right;
+	margin-right: 8px;
 }
 
-#MinH, #MinW{
+#uname{
+	float: left;
 	text-align: center;
-	color: #30303;
 	font-weight: bold;
-	padding-top:2%;
-	padding-left:2%;
-	padding-right:2%;
-
-	width: 20em;
-	height: 4.5em;
-	border: 2px inset #bebebe;
-	border-radius: 1em;
-	background: #444444;
+	width: 49vw;
+	margin-top: 21vh;
 }
 
-.number, .number1 {
-  /* width: 300px; */
-  width: 100%;
+#size {
+	float: right;
+	width: 50vw;
+	margin-top: 7vh;
 }
 
+#MinW, #MinH {
+	text-align: center;
+	color: #bebebe;
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+	width: 18vw;
+	height: 37px;
+	border-radius: 2.5em;
+	background: #000;
+	font-size: 10px;
+	margin-bottom: 1vh;
+	float: left;
+	margin-left: 8px;
+}
 
-/* -------------------------------------------------------------- */
-/* newMap.setAttribute("id", "Lalal"); */
-	/* image.setAttribute('id', "vis"); */
-	/* nameOfMap.setAttribute('id', "nom"); */
-	/* userName.setAttribute('id', "usr"); */
-	/* dataAndTime.setAttribute('id', "tim"); */
-	/* description.setAttribute('id', "des"); */
+#rangeValue, #rangeValue1 {
+	font-size: 12px;
+	margin-left: 2px;
+}
 
-#nom{
+#number, #number1 {
+  width: 16vw;
+}
+
+#result {
+	height: 65vh;
+	width: 90vw;
+	margin-top: 2vh;
+	margin-left: 5vw;
+	background: #fff;
+	border: #000 inset 5px;
+	overflow-y: scroll;
+}
+
+.answer { /*сам блок*/
+	height: 100%;
+	width: 100%;
+}
+
+.nom { /*название лабиринта*/
 	background: #444444;
-	border-radius: 1em;
-	padding-left:3%;
-
+	border-radius: 10px;
+	padding-left: 3%;
 	font-size: 120%;
+	font-weight: bold;
+	height: 20px;
+}
+
+.chosen { /*кнопка, чтоб начать прохождение*/
+	width: 8.4em;
+	height: 3em;
+	float: right;
+	background-color: #bababa;
+	color: #000;
+	border-radius: 2.5em;
+	text-align: center;
+	font-weight: bold;
+	border: #ACACAC outset 2px;
+	margin-left: 90%;
+	margin-right: 3%;
+}
+
+.usr { /*имя автора*/
 	margin-left: 2%;
 	font-weight: bold;
-}
-
-#usr{
-	margin-left:2%;
-	font-weight: bold;
-}
-
-#tim{
-	/* float:right; */
-	margin-left: 2%;
-	font-weight: bold;
-
-}
-
-#vis {
-	/* это картинка */
-	/* width: 20em; */
+	margin-top: 1%;
 	width: 30%;
-	height: 15em;
-	margin-top:2%;
-	margin-left: 1%;
-	margin-bottom: 1%;
 }
 
-#des {
-	/* это описание */
+.tim { /*время создания*/
+	margin-left: 2%;
+	font-weight: bold;
+	width: 30%;
+}
 
+.vis { /*лабиринт*/
+	margin-top: 1vw;
+	width: 30%;
+	height: 40vh;
+	margin-left: 2vw;
+	float: left;
+}
 
+.des { /*описание*/
 	width: 50%;
-	height: 10em;
-
+	height: 38vh;
 	padding-left: 1%;
 	padding-top: 1%;
-	margin-right: 10%;
-	margin-top:5%;
 	float: right;
-
+	margin-right: 3vw;
 	background: #ACACAC;
 	border: 3px inset #ACACAC;
+	margin-top: 5vh;
+	margin-bottom: 2vh;
 }
 
-#result{
-    margin-top: 10%;
-    margin-left: 5%;
-    margin-right: 5%;
-	margin-bottom:3%;
-    width: 90%;
-    height: 350px;
-    background: #b0b0b0;
-    border: inset;
-    overflow-y: scroll;
+::-webkit-scrollbar-track {
+	background-color: #ffe02f
 }
 
-/* -------------------------------------------------------------- */
-
-#answer {
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 90%;
-    height: 400px;
-    border: inset;
-    background: #bebebe;
-}
-datalist{
-	/* margin-top: 5%; */
-	display: flex;
+::-webkit-scrollbar-thumb {
+	background-color: #000
 }
 
-/* -------------------------------------------------------------- */
+::-webkit-scrollbar {
+	width: 8px
+}
 
-#footer{
+#footer {
+	width: 75.4vw;
+	margin-left: 12.3vw;
+	text-align: center;
 	position: fixed;
-  left: 0;
 	bottom: 0;
-	margin-bottom: 0.5%;
-	font-size: 80%;
-	margin-left: 1%;
-	/* margin:1em; */
-	/* font-size: 0.8em; */
+	font-size: 0.8vw;
+	font-weight: 650;
+	background-color: #ffe02f;
 }
-
-/* -------------------------------------------------------------- */
-
-
-/* div { */
-	/* border: 3px outset #2A2A2A; */
-/* } */
