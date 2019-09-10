@@ -63,7 +63,6 @@ var Grid = function(x0,y0,x1,y1){
 
 document.addEventListener("keydown",function(e){
   var i;
-  if(save){
     for(i in rect){
     move.w = move.w && !playerinLine(rect[i], player.x, player.y - 5) && !playerINwall(rect[i],player.x, player.y - 5) && !playerinarc(rect[i], player.x, player.y - 5);
     move.s =move.s && !playerinLine(rect[i], player.x, player.y + 5) && !playerINwall(rect[i],player.x, player.y + 5) && !playerinarc(rect[i], player.x, player.y + 5);
@@ -88,7 +87,6 @@ document.addEventListener("keydown",function(e){
       move.s = true;
       move.d = true;
       move.a = true;
-  }
 });
 
 document.getElementById("draw").onclick = function(){
