@@ -1,31 +1,51 @@
 "use strict"
+
 var cvs=document.getElementById('cvs');
+
 var ctx=cvs.getContext("2d");
+
 var cvswidth=window.innerWidth - 72 ;
+
 var cvsheight=window.innerHeight - 135;
+
 cvs.width=cvswidth;
+
 cvs.height=cvsheight;
+
 cvs.style.backgroundColor="darkgray";
 
 var PI = Math.PI;
+
 var grid = [];
+
 var Mycolor="black";
+
+var Mylinewidth = 1;
+
+document.getElementById("number2").oninput = function(){
+
+  Mylinewidth = this.value;
+
+};
+
 document.getElementById("color").oninput= function(){
   Mycolor = this.value
 };
 
 var res = (screen.width/1920);
 
-var Wall = function(x0,y0,x1,y1,R,color,type){
+var save = false;
+
+var Wall = function(x0,y0,x1,y1,R,color,width,type){
   this.x0 = x0,
   this.y0 = y0,
   this.x1 = x1,
   this.y1 = y1,
   this.R=R,
   this.type=type,
-  this.color=color
+  this.color=color,
+  this.width = width
 };
-
 
 var move = {
   w:true,
@@ -34,7 +54,6 @@ var move = {
   d:true
 };
 
-
 var Grid = function(x0,y0,x1,y1){
   this.x0 = x0,
   this.y0 = y0,
@@ -42,83 +61,80 @@ var Grid = function(x0,y0,x1,y1){
   this.y1 = y1
 };
 
-//var fs = require('fs');
-
-
 document.addEventListener("keydown",function(e){
   var i;
-  for(i in rect){
+    for(i in rect){
     move.w = move.w && !playerinLine(rect[i], player.x, player.y - 5) && !playerINwall(rect[i],player.x, player.y - 5) && !playerinarc(rect[i], player.x, player.y - 5);
     move.s =move.s && !playerinLine(rect[i], player.x, player.y + 5) && !playerINwall(rect[i],player.x, player.y + 5) && !playerinarc(rect[i], player.x, player.y + 5);
     move.a =move.a && !playerinLine(rect[i], player.x - 5, player.y) && !playerINwall(rect[i],player.x - 5, player.y) && !playerinarc(rect[i], player.x - 5, player.y);
     move.d = move.d && !playerinLine(rect[i], player.x + 5, player.y) && !playerINwall(rect[i],player.x + 5, player.y) && !playerinarc(rect[i], player.x + 5, player.y);
   };
-  var key=e.key;
-  var i;
-  if(key == "w" && move.w)
-  {
-    player.y -= 5;
-  }
-  if(key == "s" && move.s)
-  {
-    player.y += 5;
-  }
-  if(key == "d" && move.d)
-  {
-    player.x += 5;
-  }
-  if(key == "a" && move.a)
-  {
-    player.x -= 5;
-  }
-    move.w = true;
-    move.s = true;
-    move.d = true;
-    move.a = true;
+    var key=e.key;
+    var i;
+    if(key == "w" && move.w){
+      player.y -= 5;
+    }
+    if(key == "s" && move.s){
+      player.y += 5;
+    }
+    if(key == "d" && move.d){
+      player.x += 5;
+    }
+    if(key == "a" && move.a){
+      player.x -= 5;
+    }
+      move.w = true;
+      move.s = true;
+      move.d = true;
+      move.a = true;
 });
 
-
-
-
-
 document.getElementById("draw").onclick = function(){
-  cursor.draw=true;
-  cursor.rect=false;
-  cursor.line=false;
-  cursor.arc=false;
-  cursor.reset=false;
-  cursor.load=false;
+  if(!save && !start && !fin){
+    cursor.draw=true;
+    cursor.rect=false;
+    cursor.line=false;
+    cursor.arc=false;
+    cursor.reset=false;
+    cursor.load=false;
+  };
 };
 
 document.getElementById("line").onclick = function(){
-  cursor.draw=false;
-  cursor.rect=false;
-  cursor.line=true;
-  cursor.arc=false;
-  cursor.reset=false;
-  cursor.load=false;
+  if(!save && !start && !fin){
+    cursor.draw=false;
+    cursor.rect=false;
+    cursor.line=true;
+    cursor.arc=false;
+    cursor.reset=false;
+    cursor.load=false;
+  }
 };
 
 document.getElementById("rect").onclick = function(){
-  cursor.draw=false;
-  cursor.rect=true;
-  cursor.line=false;
-  cursor.arc=false;
-  cursor.reset=false;
-  cursor.load=false;
+  if(!save && !start && !fin){
+    cursor.draw=false;
+    cursor.rect=true;
+    cursor.line=false;
+    cursor.arc=false;
+    cursor.reset=false;
+    cursor.load=false;
+  };
 };
 
 document.getElementById("arc").onclick = function(){
-  cursor.draw=false;
-  cursor.rect=false;
-  cursor.line=false;
-  cursor.arc=true;
-  cursor.reset=false;
-  cursor.load=false;
+  if(!save && !start && !fin){
+    cursor.draw=false;
+    cursor.rect=false;
+    cursor.line=false;
+    cursor.arc=true;
+    cursor.reset=false;
+    cursor.load=false;
+  };
 };
 
 document.getElementById("back").onclick = function(){
-if(rect.length){
+if(rect.length && !save && !start && !fin){
     var a =rect[rect.length-1];
     var i,j;
     if(a.type==1 || a.type == 2){
@@ -127,29 +143,29 @@ if(rect.length){
         rect.pop();
       };
     }
-    else {
+  else {
       rect.pop();
     };
   };
 };
 
-/*document.getElementById("save").onclick = function(){
+var json;
 
-  var save = {
+document.getElementById("save").onclick = function(){
+
+  var save_how_json = {
     json_rect:rect,
     json_player:player,
     json_finish:finish
   };
 
-  var json = JSON.stringify(save);
+  json = JSON.stringify(save_how_json);
+  console.log(json);
+  save = true;
 
-  fs.writeFile('A:/js/save_maps/test.json',json,'utf8',(err) => {
-    if (err) throw err;
-    console.log('The file has been saved!');
-  });
-};*/
+};
 
-var c = 0;//для сеточки жирной и не очень(5:55 утра,помогите)
+var c = 0;//для сеточки жирной и не очень
 
 document.getElementById("grid").onclick = function(){
   var i;
@@ -183,25 +199,18 @@ var cursor = {
   rect:false,
   arc:false,
   reset:false,
-  confrim:false,
-  eraser:false
+  confrim:false
 };
-
-
 
 var player = {
-  x:12*res,
-  y:12*res
+  x:12 * res,
+  y:12 * res
 };
-
-
 
 var finish = {
   x:cvswidth-12*res,
   y:cvsheight-12*res
 };
-
-
 
 var rect = [], i,j,radius = 3,index=0,start=true,fin=false;
 
@@ -210,7 +219,7 @@ var cursorinplayer = function(){
 };
 
 var cursorinfinish = function(){
-  return Math.sqrt(Math.pow(mouse.x-finish.x,2) + Math.pow(mouse.y-finish.y,2))<10;
+  return Math.sqrt(Math.pow(mouse.x-finish.x,2) + Math.pow(mouse.y-finish.y,2))<10 ;
 };
 
 var player_in_start = function(){
@@ -223,7 +232,7 @@ var player_in_finish = function(){
 
 var playerinLine = function(r,x,y){
   if(r.type == 3 || r.type == 2){
-   return  (Math.abs((r.y1-r.y0)*x - (r.x1-r.x0) * y + (r.x1 * r.y0) - (r.y1 * r.x0))/(Math.sqrt(( Math.pow(r.y1 - r.y0,2)) + (Math.pow((r.x1 - r.x0),2)))))<=5 && playerXline(r) && playerYline(r);
+   return  (Math.abs((r.y1-r.y0)*x - (r.x1-r.x0) * y + (r.x1 * r.y0) - (r.y1 * r.x0))/(Math.sqrt(( Math.pow(r.y1 - r.y0,2)) + (Math.pow((r.x1 - r.x0),2))))) <= (5 * res + r.width) && playerXline(r) && playerYline(r);
   };
 };
 
@@ -247,13 +256,8 @@ var playerINwall = function (r,x,y) {
   };
 };
 
-var r = player.x + 10;
-var l = player.x - 10;
-var st = player.y - 10;
-var back = player.y + 10;
-
-
-setInterval(function(){
+if(!save){
+    setInterval(function(){
   ctx.clearRect(0, 0, cvswidth, cvsheight);
   ctx.closePath();
 
@@ -285,7 +289,7 @@ setInterval(function(){
 
 // if(mouse.x==550){mouse.x=550}    // ????????????????????????
 
-  if(mouse.click && cursor.line){
+  if(mouse.click && cursor.line && !save){
     ctx.strokeStyle = Mycolor;    // не работает
     ctx.beginPath();
     ctx.moveTo(mousex, mousey);
@@ -294,12 +298,12 @@ setInterval(function(){
     ctx.closePath();
   };//отрисовка линии когда курсор не движется
 
-  if(mouse.click && cursor.rect){
+  if(mouse.click && cursor.rect && !save){
     ctx.fillStyle=Mycolor;
     ctx.fillRect(mx_rect,my_rect,mouse.x - mx_rect, mouse.y - my_rect);
   };//отрисовка прямоугольника когда курсор не движется
 
-  if(mouse.click && cursor.arc){
+  if(mouse.click && cursor.arc && !save){
     ctx.fillStyle=Mycolor;
     ctx.beginPath();
     ctx.arc(mx_arc,my_arc,P(mx_arc, my_arc, mouse.x, mouse.y),0,2 * PI,false);
@@ -314,7 +318,7 @@ setInterval(function(){
 
     ctx.fillStyle = "gray";
 
-    ctx.lineWidth = 1;
+    ctx.lineWidth = Mylinewidth;
 
     ctx.closePath();
 
@@ -337,6 +341,9 @@ setInterval(function(){
   if(Math.sqrt(Math.pow(player.x-finish.x,2) + Math.pow(player.y-finish.y,2))<=10){
     document.location.reload(true);
     alert("YOU WIN");
+
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   };
 
 
@@ -349,7 +356,7 @@ setInterval(function(){
 
           ctx.fillStyle = rect[i].color;
           ctx.strokeStyle = rect[i].color;
-          ctx.arc(rect[i].x0,rect[i].y0,radius,0,Math.PI * 2,true);
+          ctx.arc(rect[i].x0,rect[i].y0,rect[i].width,0,Math.PI * 2,true);
 
           ctx.fill();
 
@@ -362,7 +369,7 @@ setInterval(function(){
 
         ctx.strokeStyle = rect[i].color;
 
-        ctx.lineWidth = radius * 2;
+        ctx.lineWidth = rect[i].width;
 
         ctx.beginPath();
 
@@ -383,7 +390,7 @@ setInterval(function(){
 
         ctx.fillStyle = rect[i].color;
 
-        ctx.lineWidth = 4;
+        ctx.lineWidth = rect[i].width;
 
         ctx.closePath();
 
@@ -423,10 +430,8 @@ setInterval(function(){
         //draw_buttons();
       };
     };
-},0.1);
-
-
-
+  },0.1);
+};
 
 var mx_down = mouse.x,my_down = mouse.y;
 
@@ -447,8 +452,8 @@ var P = function(x0,y0,x1,y1){
 };
 
 
+
 cvs.onmousemove = function(e){
-console.log(mouse.x,mouse.y);
 
   mouse.x = e.clientX - 78;
 
@@ -456,21 +461,19 @@ console.log(mouse.x,mouse.y);
 
   if(mouse.click){
 
+    if(!save &&cursor.draw && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight){
 
-    if(cursor.draw && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight){
+      rect.push(new Wall(mx_down,my_down,mouse.x,mouse.y,0,Mycolor,Mylinewidth * 2,2));
 
-      rect.push(new Wall(mx_down,my_down,mouse.x,mouse.y,0,Mycolor,2));
-
-      rect.push(new Wall(mouse.x,mouse.y,-1,-1,-1,Mycolor,1));
+      rect.push(new Wall(mouse.x,mouse.y,-1,-1,-1,Mycolor,Mylinewidth,1));
 
       cnt+=2;
 
     };//когда нажата кнопка рисования от руки
 
+    if(cursor.line && !save){
 
-    if(cursor.line){
-
-      ctx.lineWidth = 4;
+      ctx.lineWidth = Mylinewidth;
 
       ctx.strokeStyle=Mycolor;
 
@@ -488,7 +491,7 @@ console.log(mouse.x,mouse.y);
 
     };//когда нажата кнопка рисования прямых линий
 
-    if(cursor.arc){
+    if(cursor.arc && !save){
       ctx.fillStyle=Mycolor;
       ctx.beginPath();
       ctx.arc(mx_arc,my_arc,P(mx_arc, my_arc, mouse.x, mouse.y),0,2 * PI,false);
@@ -500,22 +503,25 @@ console.log(mouse.x,mouse.y);
 
     my_down = mouse.y
 
-
     if(cursorinplayer() && mouse.click && start){
+
       player.x=mouse.x;
+
       player.y=mouse.y;
-    }
+
+    };
 
     if(cursorinfinish() && mouse.click && fin){
+
       finish.x=mouse.x;
+
       finish.y=mouse.y;
+
     }
 
   }
+
 };
-
-
-
 
 var count = [] , cnt;
 
@@ -543,37 +549,37 @@ window.onmousedown = function(){
   mx_arc = mouse.x;
   my_arc = mouse.y;
 
-  if(cursor.rect){
+  if(cursor.rect && !save){
     ctx.fillRect(mx_rect,my_rect,mouse.x - mx_rect, mouse.y - my_rect);
   };
 };
 
-
 window.onmouseup = function(){
-  if(cursor.draw && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight){
+
+  if(cursor.draw && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight && !save){
 
     count.push(cnt);
 
     cnt=0;
   }
 
-  if(cursor.line && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight) {
+  if(cursor.line && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight && !save) {
 
-    rect.push(new Wall(mousex,  mousey, mouse.x, mouse.y, -1,Mycolor,3));
-
-    index++;
-  };
-
-  if(cursor.rect && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight){
-
-    rect.push(new Wall(mx_rect, my_rect, mouse.x - mx_rect, mouse.y - my_rect,-1 ,Mycolor,4));
+    rect.push(new Wall(mousex,  mousey, mouse.x, mouse.y, -1,Mycolor,Mylinewidth,3));
 
     index++;
   };
 
-  if(cursor.arc && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight){
+  if(cursor.rect && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight && !save){
 
-    rect.push(new Wall(mx_arc,my_arc, -1, -1, P(mx_arc, my_arc, mouse.x, mouse.y), Mycolor,5));
+    rect.push(new Wall(mx_rect, my_rect, mouse.x - mx_rect, mouse.y - my_rect,-1 ,Mycolor,Mylinewidth,4));
+
+    index++;
+  };
+
+  if(cursor.arc && mouse.x>=0 && mouse.x<=cvswidth && mouse.y>=0 && mouse.y<= cvsheight && !save){
+
+    rect.push(new Wall(mx_arc,my_arc, -1, -1, P(mx_arc, my_arc, mouse.x, mouse.y), Mycolor,Mylinewidth,5));
 
     index++;
   };
@@ -588,6 +594,6 @@ window.onmouseup = function(){
     fin = true
   };
 
-
   mouse.click = false;
+
 };
