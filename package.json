@@ -44,7 +44,7 @@
     "inherits": "2.0.4",
     "ipaddr.js": "1.9.1",
     "kareem": "2.3.1",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "media-typer": "1.1.0",
     "memory-pager": "1.5.0",
     "merge-descriptors": "1.0.1",
