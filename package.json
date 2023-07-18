@@ -54,7 +54,7 @@
     "mime-types": "2.1.35",
     "mongodb": "4.8.1",
     "mongodb-core": "3.2.7",
-    "mongoose": "6.5.1",
+    "mongoose": "6.11.3",
     "mongoose-legacy-pluralize": "1.0.2",
     "mpath": "0.9.0",
     "mquery": "4.0.3",
