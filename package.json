@@ -52,7 +52,7 @@
     "mime": "3.0.0",
     "mime-db": "1.52.0",
     "mime-types": "2.1.35",
-    "mongodb": "4.8.1",
+    "mongodb": "4.17.0",
     "mongodb-core": "3.2.7",
     "mongoose": "6.11.3",
     "mongoose-legacy-pluralize": "1.0.2",
